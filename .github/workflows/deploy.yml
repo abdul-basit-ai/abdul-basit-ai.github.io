@@ -76,6 +76,10 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
+      - name: Update Bundler 💎
+        run: |
+          gem install bundler
+          bundle update --bundler
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
