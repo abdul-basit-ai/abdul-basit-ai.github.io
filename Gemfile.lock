@@ -169,5 +169,5 @@ DEPENDENCIES
   unicode_utils
   webrick
 
-BUNDLED WITH
-   1.16.6
+  BUNDLED WITH
+   2.6.9
