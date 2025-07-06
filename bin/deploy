@@ -4,7 +4,7 @@
 
 # Parse cmd arguments
 
-SRC_BRANCH="main"
+SRC_BRANCH="master"
 DEPLOY_BRANCH="gh-pages"
 
 USAGE_MSG="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] [-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
@@ -83,7 +83,7 @@ else
 fi
 
 # Checkout DEPLOY_BRANCH branch
-if [ `git branch | grep $DEPLOY_BRANCH` ]
+if [ `git branch | grep $DEPLOY_BRANCH | tr ' ' '\n' | tail -1` ]
 then
   git branch -D $DEPLOY_BRANCH
 fi
@@ -94,9 +94,6 @@ export JEKYLL_ENV=production
 
 # Build site
 bundle exec jekyll build
-
-# Purge unused css
-purgecss -c purgecss.config.js
 
 # Delete and move files
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
