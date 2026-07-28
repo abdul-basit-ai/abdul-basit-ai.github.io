@@ -239,5 +239,38 @@
     <footer>
         <p>&copy; 2026 Abdul Basit.</p>
     </footer>
+    <script>
+        // JavaScript for scrollable news feed
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsFeed = document.getElementById('news-feed');
+            let isScrolling = false;
+            let scrollInterval;
+
+            function startScrolling() {
+                if (!isScrolling) {
+                    isScrolling = true;
+                    scrollInterval = setInterval(function() {
+                        newsFeed.scrollTop += 1;
+                        if (newsFeed.scrollTop + newsFeed.clientHeight >= newsFeed.scrollHeight) {
+                            newsFeed.scrollTop = 0;
+                        }
+                    }, 50);
+                }
+            }
+
+            function stopScrolling() {
+                if (isScrolling) {
+                    clearInterval(scrollInterval);
+                    isScrolling = false;
+                }
+            }
+
+            newsFeed.addEventListener('mouseenter', stopScrolling);
+            newsFeed.addEventListener('mouseleave', startScrolling);
+
+            // Start scrolling by default
+            startScrolling();
+        });
+    </script>
 </body>
 </html>
