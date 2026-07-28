@@ -97,6 +97,7 @@ h2 {
 
 .item {
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .item-header {
@@ -170,7 +171,7 @@ h2 {
     color: #800000;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 .project-links a:hover {
@@ -185,7 +186,8 @@ h2 {
     max-width: 200px;
     border-radius: 6px;
     margin-top: 10px;
-    display: block;
+    margin-right: 15px;
+    float: left;
 }
 
 #projects ul {
