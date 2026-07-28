@@ -96,8 +96,14 @@ h2 {
 }
 
 .item {
-    margin-bottom: 20px;
-    overflow: hidden;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.item-content {
+    flex: 1;
 }
 
 .item-header {
@@ -183,11 +189,10 @@ h2 {
 }
 
 .item-thumbnail {
-    max-width: 200px;
+    width: 180px;
+    min-width: 180px;
     border-radius: 6px;
-    margin-top: 10px;
-    margin-right: 15px;
-    float: left;
+    object-fit: cover;
 }
 
 #projects ul {
@@ -229,5 +234,15 @@ footer {
 
     .top-nav a {
         margin: 5px 0;
+    }
+
+    .item {
+        flex-direction: column;
+    }
+
+    .item-thumbnail {
+        width: 100%;
+        min-width: unset;
+        max-width: 250px;
     }
 }
