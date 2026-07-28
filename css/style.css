@@ -1,222 +1,100 @@
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Modern Root Variables */
-:root {
-    --bg-color: #fefefe;
-    --text-color: #242424;
-    --heading-color: #1a1a1a;
-    --mehrron-color: #800000; 
-    --academic-blue: #0366d6; 
-    --divider-color: #eaecef;
-    --border-color: #d1d5da;
-}
-
-/* Core Typography using Lora */
+/* style.css */
 body {
-    font-family: 'Lora', Georgia, serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.7;
+    font-family: 'Lora', serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
-/* Page Container Constraints and Spacing */
 .container {
-    max-width: 800px; 
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* --- Top Navigation Menu --- */
 .top-nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px; 
-    margin-bottom: 50px; 
     justify-content: center;
-    border-bottom: 1px solid var(--divider-color); 
-    padding-bottom: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 15px;
 }
 
 .top-nav a {
-    color: #6a737d; 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
+    color: #2c3e50;
     text-decoration: none;
-    transition: color 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .top-nav a:hover, .top-nav a.active {
-    color: var(--academic-blue); 
+    background-color: #2c3e50;
+    color: white;
 }
 
-/* Profile Header Section with Picture */
 .profile-section {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    margin-bottom: 30px;
     gap: 30px;
-    margin-bottom: 20px;
 }
 
 .profile-pic {
-    width: 230px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2c3e50;
 }
 
 .profile-info {
-    flex: 1; 
+    flex: 1;
 }
 
 .profile-info h1 {
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--heading-color);
+    color: #2c3e50;
 }
 
 .profile-info p {
     margin-bottom: 10px;
-    margin-top: 0;
 }
 
 .contact-line {
-    font-size: 0.95rem;
-    color: #444;
-    margin-top: 15px;
-}
-
-/* Social and Mails */
-a {
-    color: var(--academic-blue);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    text-decoration: underline;
+    margin: 15px 0;
 }
 
 .social-links {
-    margin-top: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-    font-size: 0.95rem;
+    margin-top: 10px;
 }
 
 .social-links a {
-    color: #242424;
-    font-weight: 600;
+    color: #2c3e50;
+    text-decoration: none;
+    margin: 0 5px;
 }
 
 .social-links a:hover {
-    color: var(--academic-blue);
+    text-decoration: underline;
 }
 
-/* Colour Rule for Mehrron Text */
-.mehrron-text {
-    color: var(--mehrron-color);
-}
-
-/* Divider Line */
 .divider {
     border: 0;
     height: 1px;
-    background: var(--divider-color);
+    background: #ddd;
     margin: 30px 0;
 }
 
-/* Section Headings */
 h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--heading-color);
-    border-bottom: 1px solid var(--divider-color);
-    padding-bottom: 8px;
-    margin-top: 35px;
-    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+    margin-top: 40px;
 }
 
-/* SIDE-BY-SIDE NEWS SECTION */
-#news {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px; 
-    margin-top: 35px;
-    margin-bottom: 35px;
-}
-
-#news h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 12px; 
-    border-bottom: none; 
-    white-space: nowrap; 
-}
-
-.news-container {
-    height: 100px; 
-    flex: 1; 
-    overflow-y: scroll; 
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 15px;
-    background: #fff;
-    margin: 0; 
-    box-sizing: border-box;
-}
-
-/* Stylized Inner Scrollbar */
-.news-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.news-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.news-container::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 6px;
-}
-
-.news-container::-webkit-scrollbar-thumb:hover {
-    background: #bbb;
-}
-
-.news-item {
-    padding: 8px 0;
-    border-bottom: 1px solid #f1f1f1;
-}
-
-.news-item:first-child {
-    padding-top: 0;
-}
-
-.news-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.news-date {
-    font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 0.9rem;
-    color: #555;
-    white-space: nowrap; 
-}
-
-.news-content {
-    padding-left: 5px;
-}
-
-/* Generic Item Formatting */
 .item {
     margin-bottom: 20px;
 }
@@ -224,105 +102,81 @@ h2 {
 .item-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline; 
-    margin-bottom: 2px;
+    align-items: center;
 }
 
-.item h3 {
+.item-header h3 {
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--heading-color);
+    color: #2c3e50;
 }
 
 .date {
-    font-size: 0.95rem;
-    color: #6a737d;
+    color: #666;
     font-style: italic;
-    white-space: nowrap; 
 }
 
-/* Lists and LI spacing */
-ul {
-    padding-left: 15px;
+.mehrron-text {
+    color: #cc0000;
 }
 
-li {
-    margin-bottom: 6px;
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Clean Footer */
+.news-item {
+    display: flex;
+    gap: 8px;
+}
+
+.news-date {
+    color: #666;
+    font-style: italic;
+}
+
+.news-content {
+    color: #2c3e50;
+}
+
+#projects ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#projects li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+#projects li:before {
+    content: "•";
+    color: #2c3e50;
+    position: absolute;
+    left: 0;
+}
+
 footer {
     text-align: center;
-    padding: 10px 0;
-    margin-top: 30px;
-    font-size: 0.85rem;
-    color: #777;
-    border-top: 1px solid var(--divider-color);
+    margin-top: 40px;
+    padding: 20px 0;
+    color: #666;
+    font-size: 0.9em;
 }
 
-/* Mobile and Small Screen Responsiveness */
-@media (max-width: 650px) {
-    /* 1. Fix the Top Navigation for Mobile */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .top-nav {
-        gap: 10px; 
-        margin-bottom: 30px;
-        padding-bottom: 10px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .top-nav a {
-        font-size: 0.85rem; 
-    }
-
-    /* 2. Fix the Profile Section */
-    .profile-section {
-        flex-direction: column; 
-        align-items: center;
-        text-align: center; 
-    }
-    
-    .profile-pic {
-        width: 150px; 
-        margin-bottom: 5px;
-    }
-
-    .profile-info h1 {
-        font-size: 1.7rem; 
-    }
-
-    .container {
-        margin: 15px auto;
-        padding: 0 15px;
-    }
-
-    /* 3. Fix the Lists and Dates */
-    .item-header {
-        flex-direction: column; 
-        align-items: flex-start;
-    }
-    
-    .date {
-        margin-top: 2px;
-        margin-bottom: 8px;
-    }
-    
-    /* 4. Fix the News Section for Mobile */
-    #news {
-        flex-direction: column; 
-        gap: 15px;
-    }
-    
-    #news h2 {
-        border-bottom: 1px solid var(--divider-color);
-        width: 100%;
-        padding-bottom: 8px;
-    }
-    
-    .news-container {
-        width: 100%;
-        height: 150px; 
-        max-height: 150px; /* STRICT HEIGHT LIMIT */
-        overflow-y: scroll; /* FORCE SCROLL */
-        box-sizing: border-box;
+        margin: 5px 0;
     }
 }
