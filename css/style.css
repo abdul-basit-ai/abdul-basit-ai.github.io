@@ -116,16 +116,33 @@ h2 {
 }
 
 .mehrron-text {
-    color: #cc0000;
+    color: #800000;
 }
 
 .news-container {
-    height: 150px;
+    height: 80px;
     overflow-y: auto;
     border: 1px solid #ddd;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
+}
+
+.news-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.news-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 6px;
+}
+
+.news-container::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
 }
 
 .news-item {
@@ -141,6 +158,34 @@ h2 {
 
 .news-content {
     color: #2c3e50;
+}
+
+.project-links {
+    margin-top: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a {
+    color: #800000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+.project-links a[href="#"] {
+    display: none;
+}
+
+.item-thumbnail {
+    max-width: 200px;
+    border-radius: 6px;
+    margin-top: 10px;
+    display: block;
 }
 
 #projects ul {
