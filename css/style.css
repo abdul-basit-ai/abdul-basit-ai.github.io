@@ -97,6 +97,9 @@ h2 {
 
 .item {
     margin-bottom: 30px;
+}
+
+#experience .item {
     display: flex;
     gap: 20px;
     align-items: flex-start;
@@ -104,6 +107,11 @@ h2 {
 
 .item-content {
     flex: 1;
+}
+
+.item-content h3 {
+    margin: 0 0 4px 0;
+    color: #2c3e50;
 }
 
 .item-header {
@@ -168,7 +176,8 @@ h2 {
 }
 
 .project-links {
-    margin-top: 8px;
+    margin-top: 4px;
+    margin-bottom: 6px;
     display: flex;
     gap: 15px;
 }
@@ -236,7 +245,7 @@ footer {
         margin: 5px 0;
     }
 
-    .item {
+    #experience .item {
         flex-direction: column;
     }
 
@@ -244,5 +253,10 @@ footer {
         width: 100%;
         min-width: unset;
         max-width: 250px;
+    }
+
+    .item-header {
+        flex-direction: column;
+        gap: 4px;
     }
 }
