@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<!-- Abdul Basit Portfolio -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Basit - AI Researcher | Orange Innovation</title>
+    <title>Abdul Basit - AI Researcher</title>
     <meta name="description"
-        content="Portfolio of Abdul Basit, AI Research Intern at Orange Innovation and Masters student at University of Paris-Saclay. Expert in LLMs, VLMs, and Computer Vision.">
+        content="Portfolio of Abdul Basit, AI Research Engineer and Master's graduate from University of Paris-Saclay. Expert in GNNs, LLMs, VLMs, and Computer Vision.">
     <meta name="keywords"
-        content="Abdul Basit, AI Researcher, Machine Learning, Computer Vision, LLMs, Vision Language Models, Video Language understanding, Generative AI, Paris-Saclay, Orange Innovation, GNN">
+        content="Abdul Basit, AI Researcher, Machine Learning, Computer Vision, LLMs, Vision Language Models, Generative AI, Paris-Saclay, Orange Innovation, GNN">
     <meta name="author" content="Abdul Basit">
     <meta property="og:title" content="Abdul Basit - AI Researcher">
     <meta property="og:description"
-        content="AI Researcher specializing in LLMs, VLMs, Computer Vision, and Generative AI. Currently at Orange Innovation and University of Paris-Saclay.">
+        content="AI Researcher specializing in GNNs, LLMs, VLMs, Computer Vision, and Generative AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://abdul-basit-ai.github.io/">
     <link rel="stylesheet" href="css/style.css">
@@ -26,29 +25,32 @@
 <body>
     <main class="container">
         <nav class="top-nav">
-            <a href="#" class="active">Homepage</a>
-            <a href="#news">News</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#recommendations">Recommendations</a>
+            <a href="#" class="active" data-en="Home" data-fr="Accueil">Home</a>
+            <a href="#news" data-en="News" data-fr="Actualités">News</a>
+            <a href="#education" data-en="Education" data-fr="Formation">Education</a>
+            <a href="#experience" data-en="Experience" data-fr="Expérience">Experience</a>
+            <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
+            <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
+            <a href="#achievements" data-en="Achievements" data-fr="Distinctions">Achievements</a>
+            <a href="#recommendations" data-en="References" data-fr="Références">References</a>
+            <a href="BASIT_Abdul_Resume.pdf" target="_blank" class="nav-cv-btn">CV / Resume</a>
+            <span class="nav-spacer"></span>
+            <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode">Light / Dark</button>
+            <button class="toggle-btn" id="lang-toggle" title="Switch language">EN / FR</button>
         </nav>
+
         <header class="profile-section">
-            <img src="images/pro.jpg" alt="Abdul Basit" class="profile-pic"
-                onerror="this.src='https://via.placeholder.com/200'">
+            <img src="images/pro.jpg" alt="Abdul Basit" class="profile-pic">
             <div class="profile-info">
                 <h1>Abdul Basit</h1>
-                <p>
-                    I am currently an AI Research Intern at <strong class="mehrron-text">Orange Innovation</strong>,
-                    completing my Master's degree in Machine Vision and Artificial Intelligence at the <strong
-                        class="mehrron-text">University of Paris-Saclay</strong>. I specialize in <strong>LLMs, VLM,
-                        Video Language understanding, Computer Vision, Deep Learning, Fine-tuning, RAG, Graphs, and
-                        AI-agents</strong>.
+                <p data-en="I completed my Master's degree in Machine Vision and Artificial Intelligence at the &lt;strong class='accent-text'&gt;University of Paris-Saclay&lt;/strong&gt;, with a specialization in AI. I carried out my research internship at &lt;strong class='accent-text'&gt;Orange Innovation&lt;/strong&gt;, where I worked on graph neural networks for anomaly detection in cellular networks. I specialize in &lt;strong&gt;GNNs, LLMs, VLMs, Video-Language Understanding, Computer Vision, Deep Learning, Reinforcement Learning, Fine-tuning, RAG, and AI Agents&lt;/strong&gt;."
+                   data-fr="J'ai obtenu mon Master en Machine Vision et Intelligence Artificielle à l'&lt;strong class='accent-text'&gt;Université Paris-Saclay&lt;/strong&gt;, avec une spécialisation en IA. J'ai effectué mon stage de recherche chez &lt;strong class='accent-text'&gt;Orange Innovation&lt;/strong&gt;, où j'ai travaillé sur les réseaux de neurones sur graphes pour la détection d'anomalies dans les réseaux cellulaires. Je me spécialise en &lt;strong&gt;GNN, LLM, VLM, Compréhension Vidéo-Langage, Vision par Ordinateur, Deep Learning, Apprentissage par Renforcement, Fine-tuning, RAG et Agents IA&lt;/strong&gt;.">
+                    I completed my Master's degree in Machine Vision and Artificial Intelligence at the <strong class="accent-text">University of Paris-Saclay</strong>, with a specialization in AI. I carried out my research internship at <strong class="accent-text">Orange Innovation</strong>, where I worked on graph neural networks for anomaly detection in cellular networks. I specialize in <strong>GNNs, LLMs, VLMs, Video-Language Understanding, Computer Vision, Deep Learning, Reinforcement Learning, Fine-tuning, RAG, and AI Agents</strong>.
                 </p>
-                <p style="color: #cc0000; font-weight: 600;">
-                    Looking for PhD opportunities and Research Internships
+                <p class="looking-for"
+                   data-en="Looking for PhD opportunities, CDI positions, and Research roles"
+                   data-fr="À la recherche d'opportunités de Doctorat, de postes en CDI et de rôles en Recherche">
+                    Looking for PhD opportunities, CDI positions, and Research roles
                 </p>
                 <p class="contact-line">Paris, France | Email: <a
                         href="mailto:basitmal36@gmail.com">basitmal36@gmail.com</a></p>
@@ -59,153 +61,182 @@
                 </div>
             </div>
         </header>
+
         <hr class="divider">
+
         <section id="news">
-            <h2>Latest News</h2>
+            <h2 data-en="Latest News" data-fr="Dernières Actualités">Latest News</h2>
             <div id="news-feed" class="news-container">
                 <div class="news-item">
-                    <span class="news-date">Recent 2026</span> /
-                    <span class="news-content">Joined <strong class="mehrron-text">Orange Innovation</strong> as an AI
-                        Research Intern. SUCCESS!</span>
+                    <span class="news-date">Aug 2026</span> /
+                    <span class="news-content" data-en="Completed Master's degree from &lt;strong class='accent-text'&gt;Université Paris-Saclay&lt;/strong&gt; with specialization in AI." data-fr="Obtention du Master de l'&lt;strong class='accent-text'&gt;Université Paris-Saclay&lt;/strong&gt; avec spécialisation en IA.">Completed Master's degree from <strong class="accent-text">Université Paris-Saclay</strong> with specialization in AI.</span>
                 </div>
                 <div class="news-item">
-                    <span class="news-date">Recent 2026</span> /
-                    <span class="news-content">Participated in the Hackathon at AI Collective.</span>
+                    <span class="news-date">Aug 2026</span> /
+                    <span class="news-content" data-en="Successfully defended Master's thesis on graph-based anomaly detection in cellular networks." data-fr="Soutenance réussie du mémoire de Master sur la détection d'anomalies par graphes dans les réseaux cellulaires.">Successfully defended Master's thesis on graph-based anomaly detection in cellular networks.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">Aug 2026</span> /
+                    <span class="news-content" data-en="Successfully completed internship at &lt;strong class='accent-text'&gt;Orange Innovation&lt;/strong&gt;." data-fr="Stage chez &lt;strong class='accent-text'&gt;Orange Innovation&lt;/strong&gt; terminé avec succès.">Successfully completed internship at <strong class="accent-text">Orange Innovation</strong>.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">Feb 2026</span> /
+                    <span class="news-content" data-en="Joined &lt;strong class='accent-text'&gt;Orange Innovation&lt;/strong&gt; as an AI Research Intern." data-fr="Intégration chez &lt;strong class='accent-text'&gt;Orange Innovation&lt;/strong&gt; en tant que stagiaire en recherche IA.">Joined <strong class="accent-text">Orange Innovation</strong> as an AI Research Intern.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2026</span> /
+                    <span class="news-content" data-en="Participated in the Hackathon at AI Collective." data-fr="Participation au Hackathon de AI Collective.">Participated in the Hackathon at AI Collective.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2025</span> /
-                    <span class="news-content">Participated in the Mistral AI MCP Hackathon.</span>
+                    <span class="news-content" data-en="Participated in the Mistral AI MCP Hackathon." data-fr="Participation au Hackathon MCP de Mistral AI.">Participated in the Mistral AI MCP Hackathon.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2025</span> /
-                    <span class="news-content">Began M2 year of Masters.</span>
+                    <span class="news-content" data-en="Began M2 year of Masters." data-fr="Début de l'année M2 du Master.">Began M2 year of Masters.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2024</span> /
-                    <span class="news-content">Began M1 year of Masters.</span>
+                    <span class="news-content" data-en="Began M1 year of Masters." data-fr="Début de l'année M1 du Master.">Began M1 year of Masters.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2024</span> /
-                    <span class="news-content">Relocated to Paris, joined the <strong class="mehrron-text">University of
-                            Paris-Saclay</strong>.</span>
+                    <span class="news-content" data-en="Relocated to Paris, joined the &lt;strong class='accent-text'&gt;University of Paris-Saclay&lt;/strong&gt;." data-fr="Installation à Paris, intégration de l'&lt;strong class='accent-text'&gt;Université Paris-Saclay&lt;/strong&gt;.">Relocated to Paris, joined the <strong class="accent-text">University of Paris-Saclay</strong>.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2024</span> /
-                    <span class="news-content">Graduated from Bahria University.</span>
+                    <span class="news-content" data-en="Graduated from Bahria University." data-fr="Diplômé de Bahria University.">Graduated from Bahria University.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2023-2024</span> /
-                    <span class="news-content">Successfully completed Bachelor's thesis.</span>
+                    <span class="news-content" data-en="Successfully completed Bachelor's thesis." data-fr="Soutenance réussie du mémoire de Licence.">Successfully completed Bachelor's thesis.</span>
                 </div>
                 <div class="news-item">
                     <span class="news-date">2023-2024</span> /
-                    <span class="news-content">Bachelor's thesis awarded research funding (NGIRI).</span>
+                    <span class="news-content" data-en="Bachelor's thesis awarded research funding (NGIRI)." data-fr="Mémoire de Licence financé par une bourse de recherche (NGIRI).">Bachelor's thesis awarded research funding (NGIRI).</span>
                 </div>
             </div>
         </section>
+
         <section id="education">
-            <h2>Education</h2>
+            <h2 data-en="Education" data-fr="Formation">Education</h2>
             <div class="item">
                 <div class="item-header">
-                    <h3>Master in Machine Vision and Artificial Intelligence</h3>
+                    <h3 data-en="M.Sc. in Machine Vision and Artificial Intelligence" data-fr="Master en Machine Vision et Intelligence Artificielle">M.Sc. in Machine Vision and Artificial Intelligence</h3>
                     <span class="date">2024 - 2026</span>
                 </div>
-                <p><strong class="mehrron-text">University of Paris-Saclay</strong></p>
+                <p><strong class="accent-text">University of Paris-Saclay</strong> — <span data-en="Grade: M2: 14.6/20, M1: 12/20" data-fr="Note : M2 : 14.6/20, M1 : 12/20">Grade: M2: 14.6/20, M1: 12/20</span></p>
             </div>
             <div class="item">
                 <div class="item-header">
-                    <h3>Bachelor of Engineering (EE)</h3>
+                    <h3 data-en="Bachelor of Engineering (EE)" data-fr="Licence en Ingénierie (EE)">Bachelor of Engineering (EE)</h3>
                     <span class="date">2020 - 2024</span>
                 </div>
-                <p><strong class="mehrron-text">Bahria University</strong></p>
+                <p><strong class="accent-text">Bahria University</strong> — <span data-en="Grade: 3.46/4.00" data-fr="Note : 3.46/4.00">Grade: 3.46/4.00</span></p>
             </div>
         </section>
+
         <section id="experience">
-            <h2>Research & Engineering Experience</h2>
+            <h2 data-en="Research &amp; Engineering Experience" data-fr="Expérience en Recherche &amp; Ingénierie">Research & Engineering Experience</h2>
             <div class="item">
                 <img src="images/projects/stage.png" alt="AI Research Engineer (Intern) @ Orange Innovation" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
                     <div class="item-header">
-                        <h3>AI Research Engineer (Intern) @ <strong class="mehrron-text">Orange Innovation</strong></h3>
-                        <span class="date">Feb 2026 - Present</span>
+                        <h3>AI Research Engineer (Intern) @ <strong class="accent-text">Orange Innovation</strong></h3>
+                        <span class="date">Feb 2026 - Aug 2026</span>
                     </div>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1e9IQRd-5p9qpItNWWbcWwtw6fYggAEKN/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>Modeling network data, complex topologies, and building performance-enhanced GNNs. Developing
-                        end-to-end ML pipelines for KPI extraction, custom training loops, and distributed training on
-                        clusters.</p>
+                    <p data-en="Modeled complex network topologies and developed performance-optimized GNNs for anomaly detection. Adapted ANEMONE into an edge-aware GATv2 self-supervised framework. Designed a physics-informed synthetic anomaly generator. Built end-to-end ML pipelines with distributed training on HPC clusters using Slurm."
+                       data-fr="Modélisation de topologies réseau complexes et développement de GNN optimisés pour la détection d'anomalies. Adaptation d'ANEMONE en un framework autosupervisé edge-aware GATv2. Conception d'un générateur d'anomalies synthétiques. Construction de pipelines ML de bout en bout avec entraînement distribué sur clusters HPC via Slurm.">
+                        Modeled complex network topologies and developed performance-optimized GNNs for anomaly detection. Adapted ANEMONE into an edge-aware GATv2 self-supervised framework. Designed a physics-informed synthetic anomaly generator. Built end-to-end ML pipelines with distributed training on HPC clusters using Slurm.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/multimodal.png" alt="Multimodal Text-Guided Video Segment Search" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>Multimodal Text-Guided Video Segment Search</h3>
+                    <h3 data-en="Multimodal Text-Guided Video Segment Search" data-fr="Recherche Multimodale de Segments Vidéo Guidée par le Texte">Multimodal Text-Guided Video Segment Search</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1Pz9uQqEWDwjb5EReomyPzCTNwjDvY51B/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>Conducted a comprehensive study on state-of-the-art techniques for text-guided temporal video
-                        retrieval. Focused on retrieving specific moments based on natural language queries by studying
-                        uniform, adaptive, and dynamic sampling strategies.</p>
+                    <p data-en="Conducted a comprehensive study on state-of-the-art techniques for text-guided temporal video retrieval. Focused on retrieving specific moments based on natural language queries by studying uniform, adaptive, and dynamic sampling strategies."
+                       data-fr="Étude approfondie des techniques de pointe pour la recherche temporelle de vidéos guidée par le texte. Étude de stratégies d'échantillonnage uniforme, adaptatif et dynamique pour la récupération de moments spécifiques.">
+                        Conducted a comprehensive study on state-of-the-art techniques for text-guided temporal video retrieval. Focused on retrieving specific moments based on natural language queries by studying uniform, adaptive, and dynamic sampling strategies.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/3d-reconstruction.png" alt="3-D Reconstruction of Scenes from Images" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>3-D Reconstruction of Scenes from Images</h3>
+                    <h3 data-en="3-D Reconstruction of Scenes from Images" data-fr="Reconstruction 3D de Scènes à Partir d'Images">3-D Reconstruction of Scenes from Images</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1n3XLzBBRIAPu268YrNTokzWNzToRZbtv/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>Analyzed state-of-the-art ML techniques for 3D reconstruction from 2D images, including NeRF, Instant
-                        NeRF, PixelNeRF, Gaussian Splatting, and Neuralangelo. Evaluated advancements in volume rendering,
-                        hash encoding, and Signed Distance Functions.</p>
+                    <p data-en="Analyzed state-of-the-art ML techniques for 3D reconstruction from 2D images, including NeRF, Instant NeRF, PixelNeRF, Gaussian Splatting, and Neuralangelo."
+                       data-fr="Analyse des techniques ML de pointe pour la reconstruction 3D à partir d'images 2D, incluant NeRF, Instant NeRF, PixelNeRF, Gaussian Splatting et Neuralangelo.">
+                        Analyzed state-of-the-art ML techniques for 3D reconstruction from 2D images, including NeRF, Instant NeRF, PixelNeRF, Gaussian Splatting, and Neuralangelo.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/slmlr.png" alt="Learning Arithmetic Operations" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>Learning Arithmetic Operations Using Small-LLM With Reinforcement Learning</h3>
+                    <h3 data-en="Learning Arithmetic Operations Using Small-LLM With Reinforcement Learning" data-fr="Apprentissage d'Opérations Arithmétiques avec un Small-LLM et l'Apprentissage par Renforcement">Learning Arithmetic Operations Using Small-LLM With Reinforcement Learning</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1JbpeV45Io5IMmo0qYKSirM0mBkdb5ywK/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>This project explores the development of a lightweight Large Language Model (LLM) specialized in arithmetic reasoning, specifically focusing on integer addition and subtraction up to four digits. The project employed a two-stage training pipeline: initial Supervised Fine-Tuning (SFT) on a curriculum-based dataset to establish baseline competency, followed by a Reinforcement Learning (RL) phase using Expert Iteration (Rejection Sampling).</p>
+                    <p data-en="Developed a lightweight LLM specialized in arithmetic reasoning using a two-stage pipeline: Supervised Fine-Tuning on a curriculum-based dataset, followed by Reinforcement Learning via Expert Iteration (Rejection Sampling)."
+                       data-fr="Développement d'un LLM léger spécialisé dans le raisonnement arithmétique via un pipeline en deux étapes : Fine-tuning supervisé sur un dataset curriculaire, suivi d'un apprentissage par renforcement par itération d'experts.">
+                        Developed a lightweight LLM specialized in arithmetic reasoning using a two-stage pipeline: Supervised Fine-Tuning on a curriculum-based dataset, followed by Reinforcement Learning via Expert Iteration (Rejection Sampling).
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/event.png" alt="Event Cameras" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>Event Cameras</h3>
+                    <h3 data-en="Event Cameras" data-fr="Caméras Événementielles">Event Cameras</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1bFuA3TWeyZ_KRN4FQ_nAXdh9kpqAkSZy/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>This report investigates the fundamental operating principles and algorithmic applications of Event-based Cameras (Dynamic Vision Sensors), contrasting them with traditional frame-based acquisition. The study is divided into three primary phases: data visualization, spatiotemporal analysis, and motion estimation.</p>
+                    <p data-en="Investigated operating principles and algorithmic applications of Event-based Cameras (Dynamic Vision Sensors), including data visualization, spatiotemporal analysis, and motion estimation."
+                       data-fr="Étude des principes de fonctionnement et applications algorithmiques des caméras événementielles (Dynamic Vision Sensors), incluant la visualisation, l'analyse spatiotemporelle et l'estimation de mouvement.">
+                        Investigated operating principles and algorithmic applications of Event-based Cameras (Dynamic Vision Sensors), including data visualization, spatiotemporal analysis, and motion estimation.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/hanoi.png" alt="Extended Reality – Towers of Hanoi" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>Extended Reality – Towers of Hanoi</h3>
+                    <h3 data-en="Extended Reality – Towers of Hanoi" data-fr="Réalité Étendue – Tours de Hanoï">Extended Reality – Towers of Hanoi</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1Vehugvzvau7yUOpUkO5un_y3kr6BEZ2F/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>The objective is to design and implement an immersive Extended Reality (XR) application recreating the classic "Towers of Hanoi" mathematical puzzle. The project was developed using WebXR and the Three.js JavaScript library, ensuring cross-platform compatibility and accessibility via standard web browsers on devices such as the Oculus Quest.</p>
+                    <p data-en="Designed an immersive XR application using WebXR and Three.js, ensuring cross-platform compatibility on devices such as Oculus Quest."
+                       data-fr="Conception d'une application XR immersive avec WebXR et Three.js, assurant la compatibilité multiplateforme sur des appareils comme l'Oculus Quest.">
+                        Designed an immersive XR application using WebXR and Three.js, ensuring cross-platform compatibility on devices such as Oculus Quest.
+                    </p>
                 </div>
             </div>
             <div class="item">
-                <img src="images/projects/clm.png" alt="Continual Learning for Multi-Image Classification Task" class="item-thumbnail" onerror="this.style.display='none'">
+                <img src="images/projects/clm.png" alt="Continual Learning" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>Continual Learning for Multi-Image Classification Task</h3>
+                    <h3 data-en="Continual Learning for Multi-Image Classification" data-fr="Apprentissage Continu pour la Classification Multi-Images">Continual Learning for Multi-Image Classification</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1lzg1l-slupE-8bAPgTY7fRiQzg1H4upy/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>This report presents a comprehensive evaluation of strategies for mitigating Catastrophic Forgetting in neural networks during sequential task acquisition. The project utilized the Split-MNIST benchmark to evaluate methods such as Elastic Weight Consolidation (EWC) and Experience Replay against a baseline of sequential fine-tuning.</p>
+                    <p data-en="Evaluated strategies for mitigating Catastrophic Forgetting using the Split-MNIST benchmark, including Elastic Weight Consolidation (EWC) and Experience Replay."
+                       data-fr="Évaluation de stratégies pour atténuer l'oubli catastrophique sur le benchmark Split-MNIST, incluant l'EWC et le Replay d'Expérience.">
+                        Evaluated strategies for mitigating Catastrophic Forgetting using the Split-MNIST benchmark, including Elastic Weight Consolidation (EWC) and Experience Replay.
+                    </p>
                 </div>
             </div>
             <div class="item">
@@ -216,107 +247,256 @@
                         <a href="https://drive.google.com/file/d/1RoyxWfZkmpQvm0LbT285DxwZ1pCPhsjC/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>This paper focuses on a comparative analysis of Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs), highlighting their strengths and limitations in terms of sample quality, training stability, latent space representation, and generalization. The study aims to provide insight into how different generative learning paradigms affect performance and suitability for various applications.</p>
+                    <p data-en="Comparative analysis of GANs and VAEs: sample quality, training stability, latent space representation, and generalization across different generative learning paradigms."
+                       data-fr="Analyse comparative des GANs et VAEs : qualité des échantillons, stabilité d'entraînement, représentation de l'espace latent et généralisation.">
+                        Comparative analysis of GANs and VAEs: sample quality, training stability, latent space representation, and generalization across different generative learning paradigms.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/style.png" alt="Style Transfer & GAN-Based Data Augmentation" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>Style Transfer & GAN-Based Data Augmentation</h3>
+                    <h3 data-en="Style Transfer &amp; GAN-Based Data Augmentation" data-fr="Transfert de Style &amp; Augmentation de Données par GAN">Style Transfer & GAN-Based Data Augmentation</h3>
                     <div class="project-links">
                         <a href="https://drive.google.com/file/d/1C2YoT2xXXVEX3H70G55LPlnwnHUY6WYf/view?usp=sharing" target="_blank">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>Built custom CNNs to measure data augmentation impacts. Developed Conditional GANs (C-GANs) with
-                        progressive resolution growth to generate high-quality synthetic data, significantly improving CNN
-                        classifier performance. Implemented CycleGAN for unpaired image-to-image translation.</p>
+                    <p data-en="Built custom CNNs, developed Conditional GANs with progressive resolution growth, and implemented CycleGAN for unpaired image-to-image translation."
+                       data-fr="Construction de CNN personnalisés, développement de GANs conditionnels avec croissance progressive de la résolution, et implémentation de CycleGAN pour la traduction image-à-image non appariée.">
+                        Built custom CNNs, developed Conditional GANs with progressive resolution growth, and implemented CycleGAN for unpaired image-to-image translation.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/plant-monitoring.png" alt="AI-Based Plant Monitoring System" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
-                    <h3>AI-Based Plant Monitoring System (<strong class="mehrron-text">Funded</strong>)</h3>
+                    <h3 data-en="AI-Based Plant Monitoring System (Funded)" data-fr="Système de Surveillance des Plantes par IA (Financé)">AI-Based Plant Monitoring System (<strong class="accent-text">Funded</strong>)</h3>
                     <div class="project-links">
                         <a href="#">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>Deployed 5 different CNN architectures (ResNet50, VGG16/19, MobileNet V1/V2) on a Raspberry Pi using
-                        TF Lite for real-time disease detection. Integrated the AI system onto the end-effector of a
-                        Cable-Driven Parallel Robot operated via Python joystick libraries.</p>
+                    <p data-en="Deployed 5 CNN architectures (ResNet50, VGG16/19, MobileNet V1/V2) on Raspberry Pi using TF Lite for real-time disease detection. Integrated with a Cable-Driven Parallel Robot."
+                       data-fr="Déploiement de 5 architectures CNN (ResNet50, VGG16/19, MobileNet V1/V2) sur Raspberry Pi via TF Lite pour la détection de maladies en temps réel. Intégration avec un robot parallèle à câbles.">
+                        Deployed 5 CNN architectures (ResNet50, VGG16/19, MobileNet V1/V2) on Raspberry Pi using TF Lite for real-time disease detection. Integrated with a Cable-Driven Parallel Robot.
+                    </p>
                 </div>
             </div>
             <div class="item">
                 <img src="images/projects/aquagen-intern.png" alt="Engineering Intern @ Aquagen" class="item-thumbnail" onerror="this.style.display='none'">
                 <div class="item-content">
                     <div class="item-header">
-                        <h3>Engineering Intern @ <strong class="mehrron-text">Aquagen Pvt.Ltd</strong></h3>
+                        <h3>Engineering Intern @ <strong class="accent-text">Aquagen Pvt.Ltd</strong></h3>
                         <span class="date">Aug 2023 - Sept 2023</span>
                     </div>
                     <div class="project-links">
                         <a href="#">Report</a>
                         <a href="#">Code</a>
                     </div>
-                    <p>Designed PLC code for process automation, ensuring accurate feedback from sensors. Identified and
-                        resolved issues in the PLC system, and upgraded the HMI code for monitoring plant generation.</p>
+                    <p data-en="Designed PLC code for process automation, resolved PLC system issues, and upgraded HMI code for plant monitoring."
+                       data-fr="Conception de code PLC pour l'automatisation des processus, résolution de problèmes système PLC, et mise à niveau du code IHM pour la supervision d'usine.">
+                        Designed PLC code for process automation, resolved PLC system issues, and upgraded HMI code for plant monitoring.
+                    </p>
                 </div>
             </div>
         </section>
+
         <section id="projects">
-            <h2>Technical Projects</h2>
+            <h2 data-en="Selected Implementations" data-fr="Implémentations Sélectionnées">Selected Implementations</h2>
             <ul>
-                <li>Implemented the original Transformer and Vision Transformer paper from scratch using PyTorch.</li>
-                <li>Fine-tuned (Instruction-based) Mistral-7B using Q-LoRA on the Stanford Alpaca Dataset.</li>
-                <li>Built a Multimodal Vision Language Model from scratch (PaliGemma).</li>
-                <li>Developed a Small Language Model using Reinforcement Learning for Arithmetic Operations.</li>
-                <li>Implemented LLaMA-2 from scratch using PyTorch.</li>
-                <li>Implemented CLIP from scratch in JAX/Flax.</li>
-                <li>Performed LLM alignment using PPO/DPO.</li>
+                <li data-en="Implemented the original Transformer and Vision Transformer from scratch using PyTorch." data-fr="Implémentation du Transformer original et du Vision Transformer from scratch avec PyTorch.">Implemented the original Transformer and Vision Transformer from scratch using PyTorch.</li>
+                <li data-en="Fine-tuned (Instruction-based) Mistral-7B using QLoRA on the Stanford Alpaca Dataset." data-fr="Fine-tuning (par instructions) de Mistral-7B avec QLoRA sur le dataset Stanford Alpaca.">Fine-tuned (Instruction-based) Mistral-7B using QLoRA on the Stanford Alpaca Dataset.</li>
+                <li data-en="Built a Multimodal Vision Language Model from scratch (PaliGemma)." data-fr="Construction d'un modèle Vision-Langage multimodal from scratch (PaliGemma).">Built a Multimodal Vision Language Model from scratch (PaliGemma).</li>
+                <li data-en="Developed a Small Language Model using Reinforcement Learning for mathematical reasoning." data-fr="Développement d'un Small Language Model avec l'apprentissage par renforcement pour le raisonnement mathématique.">Developed a Small Language Model using Reinforcement Learning for mathematical reasoning.</li>
+                <li data-en="Implemented LLaMA-2 architecture from scratch in PyTorch." data-fr="Implémentation de l'architecture LLaMA-2 from scratch en PyTorch.">Implemented LLaMA-2 architecture from scratch in PyTorch.</li>
+                <li data-en="Implemented CLIP from scratch using JAX/Flax." data-fr="Implémentation de CLIP from scratch avec JAX/Flax.">Implemented CLIP from scratch using JAX/Flax.</li>
+                <li data-en="Performed LLM alignment using PPO/DPO." data-fr="Alignement de LLM via PPO/DPO.">Performed LLM alignment using PPO/DPO.</li>
             </ul>
         </section>
+
         <section id="skills">
-            <h2>Technical Skills</h2>
-            <p><strong>Programming & Frameworks:</strong> Python, PyTorch, JAX, Flax, TensorFlow, PyGAD, C++, C,
-                Verilog, VHDL, Huggingface, LLM APIs, Matplotlib, OpenCV, Pillow, Git/GitHub.</p>
-            <p><strong>Languages:</strong> English (Fluent), French (Actively Learning).</p>
+            <h2 data-en="Technical Skills" data-fr="Compétences Techniques">Technical Skills</h2>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Programming Languages" data-fr="Langages de Programmation">Programming Languages</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">Verilog</span>
+                    <span class="skill-tag">VHDL</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="ML / DL Frameworks" data-fr="Frameworks ML / DL">ML / DL Frameworks</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">PyTorch / DDP</span>
+                    <span class="skill-tag">JAX / Flax</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Hugging Face</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">PyTorch Geometric</span>
+                    <span class="skill-tag">NetworkX</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Deep Learning" data-fr="Deep Learning">Deep Learning</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">CNNs</span>
+                    <span class="skill-tag">Autoencoders</span>
+                    <span class="skill-tag">GANs</span>
+                    <span class="skill-tag">VAEs</span>
+                    <span class="skill-tag">Diffusion Models</span>
+                    <span class="skill-tag">Transformers</span>
+                    <span class="skill-tag">Vision Transformers</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="NLP &amp; LLMs" data-fr="NLP &amp; LLM">NLP & LLMs</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">RNNs / LSTMs</span>
+                    <span class="skill-tag">Transformers</span>
+                    <span class="skill-tag">State Space Models</span>
+                    <span class="skill-tag">CLIP / SigLIP</span>
+                    <span class="skill-tag">RoPE</span>
+                    <span class="skill-tag">RMSNorm</span>
+                    <span class="skill-tag">KV Cache</span>
+                    <span class="skill-tag">Quantization</span>
+                    <span class="skill-tag">Tokenization</span>
+                    <span class="skill-tag">LoRA / QLoRA</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Reinforcement Learning" data-fr="Apprentissage par Renforcement">Reinforcement Learning</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">Value Iteration</span>
+                    <span class="skill-tag">Policy Iteration</span>
+                    <span class="skill-tag">PPO</span>
+                    <span class="skill-tag">DPO</span>
+                    <span class="skill-tag">GRPO</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Computer Vision" data-fr="Vision par Ordinateur">Computer Vision</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">NeRF</span>
+                    <span class="skill-tag">Gaussian Splatting</span>
+                    <span class="skill-tag">SDF</span>
+                    <span class="skill-tag">Meshes / Voxels</span>
+                    <span class="skill-tag">Volume Rendering</span>
+                    <span class="skill-tag">Ray Tracing</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Graph Machine Learning" data-fr="Apprentissage sur Graphes">Graph Machine Learning</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">GCN</span>
+                    <span class="skill-tag">GAT / GATv2</span>
+                    <span class="skill-tag">Community Detection</span>
+                    <span class="skill-tag">Knowledge Graphs</span>
+                    <span class="skill-tag">GraphRAG</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Agentic AI" data-fr="IA Agentique">Agentic AI</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">LangGraph</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">Tool Calling</span>
+                    <span class="skill-tag">MCP</span>
+                    <span class="skill-tag">RAG</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Explainability" data-fr="Explicabilité">Explainability</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">SHAP</span>
+                    <span class="skill-tag">LIME</span>
+                    <span class="skill-tag">Post-hoc Feature Attribution</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Tools &amp; Platforms" data-fr="Outils &amp; Plateformes">Tools & Platforms</div>
+                <div class="skills-tags">
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">MLOps</span>
+                    <span class="skill-tag">Grafana</span>
+                    <span class="skill-tag">Slurm</span>
+                    <span class="skill-tag">W&B</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title" data-en="Languages" data-fr="Langues">Languages</div>
+                <div class="skills-tags">
+                    <span class="skill-tag" data-en="English (Fluent)" data-fr="Anglais (Courant)">English (Fluent)</span>
+                    <span class="skill-tag" data-en="French (Actively Learning)" data-fr="Français (En cours d'apprentissage)">French (Actively Learning)</span>
+                </div>
+            </div>
         </section>
+
         <section id="achievements">
-            <h2>Hackathons, Honours & Awards</h2>
+            <h2 data-en="Hackathons, Honours &amp; Awards" data-fr="Hackathons, Honneurs &amp; Prix">Hackathons, Honours & Awards</h2>
             <div class="item">
                 <div class="item-header">
                     <h3>Mistral AI MCP Hackathon</h3>
                     <span class="date">2025</span>
                 </div>
-                <p>Integrated Facebook with LeChat to manage account actions and extract insights directly on the LeChat
-                    interface using Alpic.</p>
+                <p data-en="Integrated Facebook with LeChat to manage account actions and extract insights directly on the LeChat interface using Alpic."
+                   data-fr="Intégration de Facebook avec LeChat pour gérer les actions de compte et extraire des insights directement sur l'interface LeChat via Alpic.">
+                    Integrated Facebook with LeChat to manage account actions and extract insights directly on the LeChat interface using Alpic.
+                </p>
             </div>
             <div class="item">
                 <div class="item-header">
-                    <h3>Activate Your Voice Hackathon</h3>
+                    <h3 data-en="Activate Your Voice Hackathon" data-fr="Hackathon Activate Your Voice">Activate Your Voice Hackathon</h3>
                     <span class="date">2026</span>
                 </div>
-                <p>Created a memory-persistent conversational AI agent to automate various tasks.</p>
+                <p data-en="Created a memory-persistent conversational AI agent to automate various tasks."
+                   data-fr="Création d'un agent conversationnel IA à mémoire persistante pour automatiser diverses tâches.">
+                    Created a memory-persistent conversational AI agent to automate various tasks.
+                </p>
             </div>
             <ul>
-                <li class="mehrron-text"><strong>National Grassroots Research Initiative Fund:</strong> Awarded NGIRI
-                    Fund for Bachelor's Thesis.</li>
-                <li class="mehrron-text"><strong>Government of Pakistan:</strong> Awarded a Laptop from PMYLS.</li>
+                <li><strong class="accent-text" data-en="National Grassroots Research Initiative Fund:" data-fr="National Grassroots Research Initiative Fund :">National Grassroots Research Initiative Fund:</strong> <span data-en="Awarded NGIRI Fund for Bachelor's Thesis." data-fr="Bourse NGIRI attribuée pour le mémoire de Licence.">Awarded NGIRI Fund for Bachelor's Thesis.</span></li>
+                <li><strong class="accent-text" data-en="Government of Pakistan:" data-fr="Gouvernement du Pakistan :">Government of Pakistan:</strong> <span data-en="Awarded a Laptop from PMYLS." data-fr="Ordinateur portable attribué par le PMYLS.">Awarded a Laptop from PMYLS.</span></li>
             </ul>
         </section>
+
         <section id="recommendations">
-            <h2>Recommendations</h2>
+            <h2 data-en="References" data-fr="Références">References</h2>
             <ul>
-                <li><strong>Miss Kahina Mokrani</strong> (Orange Innovation) - Supervisor at Orange | Email: <a
-                            href="mailto:kahina.mokrani@orange.com">kahina.mokrani@orange.com</a></li>
-                <li><strong>Dr. Hedia Tabia</strong> (University of Paris-Saclay) - Supervisor in Masters | Email: <a
-                            href="mailto:hedi.tabia@univ-evry.fr">hedi.tabia@univ-evry.fr</a></li>
-                <li><strong>Dr. Abdul Attayyab Khan</strong> (Bahria University) - Supervisor in Bachelors | Email: <a
-                            href="mailto:AAKHAN.BUKC@bahria.edu.pk">AAKHAN.BUKC@bahria.edu.pk</a></li>
+                <li><strong>Kahina Mokrani</strong> (Orange Innovation) — <span data-en="Internship Supervisor" data-fr="Encadrante de stage">Internship Supervisor</span> | <a href="mailto:kahina.mokrani@orange.com">kahina.mokrani@orange.com</a></li>
+                <li><strong>Dr. Hedia Tabia</strong> (University of Paris-Saclay) — <span data-en="Master's Supervisor" data-fr="Directeur de Master">Master's Supervisor</span> | <a href="mailto:hedi.tabia@univ-evry.fr">hedi.tabia@univ-evry.fr</a></li>
+                <li><strong>Dr. Abdul Attayyab Khan</strong> (Bahria University) — <span data-en="Bachelor's Supervisor" data-fr="Directeur de Licence">Bachelor's Supervisor</span> | <a href="mailto:AAKHAN.BUKC@bahria.edu.pk">AAKHAN.BUKC@bahria.edu.pk</a></li>
             </ul>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 Abdul Basit.</p>
+        <p>&copy; 2026 Abdul Basit. <span data-en="Last updated:" data-fr="Dernière mise à jour :">Last updated:</span> <span id="last-updated"></span></p>
     </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>

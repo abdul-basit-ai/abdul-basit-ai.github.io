@@ -1,54 +1,83 @@
-/**
- * Abdul Basit - Portfolio Script
- * Handles: 
- * 1. Active Navigation Highlighting 
- * 2. News Scroller Initialization
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.top-nav a');
     const sections = document.querySelectorAll('section, header');
 
-    // 1. ACTIVE LINK HIGHLIGHTING
-    // This updates the top menu as you scroll to different sections
+    // Active link highlighting on scroll
     window.addEventListener('scroll', () => {
         let current = "";
-
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Checks if the user has scrolled into the section
             if (pageYOffset >= sectionTop - 150) {
                 current = section.getAttribute("id");
             }
         });
-
         navLinks.forEach((link) => {
             link.classList.remove("active");
-            // If the section ID matches the link's href, highlight it
-            if (current && link.getAttribute("href").includes(current)) {
+            const href = link.getAttribute("href");
+            if (current && href && href.includes(current)) {
                 link.classList.add("active");
             }
         });
     });
 
-    // 2. SMOOTH SCROLL FALLBACK
-    // Ensures clicking a nav link glides to the section
+    // Smooth scroll for nav links
     navLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            
-            // Only scroll if it's an internal link (starts with #)
-            if (targetId.startsWith('#') && targetId !== '#') {
+            if (targetId && targetId.startsWith('#') && targetId !== '#') {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
     });
+
+    // ─── Dark / Light Mode Toggle ───
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
+
+    // ─── EN / FR Language Toggle ───
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+
+        document.querySelectorAll('[data-en][data-fr]').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if (text !== null) {
+                el.innerHTML = text;
+            }
+        });
+    }
+
+    if (currentLang === 'fr') {
+        applyLanguage('fr');
+    }
+
+    langToggle.addEventListener('click', () => {
+        applyLanguage(currentLang === 'en' ? 'fr' : 'en');
+    });
+
+    // ─── Last Updated Date ───
+    const lastUpdatedEl = document.getElementById('last-updated');
+    if (lastUpdatedEl) {
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        lastUpdatedEl.textContent = now.toLocaleDateString('en-US', options);
+    }
 });

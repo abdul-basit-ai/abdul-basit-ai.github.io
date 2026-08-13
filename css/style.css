@@ -1,53 +1,153 @@
-/* style.css */
+/* style.css — Portfolio of Abdul Basit */
+
+:root {
+    --bg: #ffffff;
+    --bg-secondary: #f4f6fb;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --heading: #16213e;
+    --accent: #e94560;
+    --accent-hover: #c73650;
+    --nav-bg: #16213e;
+    --nav-text: #fff;
+    --card-bg: #ffffff;
+    --card-border: #e0e4ed;
+    --border: #d5dbe6;
+    --tag-bg: #eef1f8;
+    --tag-text: #16213e;
+    --shadow: 0 2px 12px rgba(22, 33, 62, 0.07);
+    --link: #0f3460;
+}
+
+[data-theme="dark"] {
+    --bg: #0f0f23;
+    --bg-secondary: #1a1a3e;
+    --text: #e2e2e2;
+    --text-secondary: #a0a0b8;
+    --heading: #f0f0f5;
+    --accent: #e94560;
+    --accent-hover: #ff6b81;
+    --nav-bg: #16163a;
+    --nav-text: #e2e2e2;
+    --card-bg: #1a1a3e;
+    --card-border: #2a2a5a;
+    --border: #2a2a5a;
+    --tag-bg: #22224a;
+    --tag-text: #d0d0e8;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    --link: #7ca1d4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Lora', serif;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--text);
+    background-color: var(--bg);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    color: var(--link);
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 30px;
 }
 
+/* ─── Top Navigation ─── */
 .top-nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    gap: 15px;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--nav-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
 }
 
 .top-nav a {
-    color: #2c3e50;
+    color: var(--nav-text);
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 0.92em;
+    transition: background-color 0.25s, color 0.25s;
 }
 
-.top-nav a:hover, .top-nav a.active {
-    background-color: #2c3e50;
-    color: white;
+.top-nav a:hover,
+.top-nav a.active {
+    background-color: var(--accent);
+    color: #fff;
 }
 
+.nav-cv-btn {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.92em;
+    transition: background-color 0.25s;
+}
+
+.nav-cv-btn:hover {
+    background: var(--accent-hover);
+    color: #fff !important;
+}
+
+.nav-spacer {
+    flex-grow: 1;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: var(--nav-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85em;
+    transition: background-color 0.25s, border-color 0.25s;
+}
+
+.toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ─── Profile Section ─── */
 .profile-section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 30px;
-    gap: 30px;
+    gap: 35px;
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 240px;
+    min-width: 240px;
+    border-radius: 10px;
     object-fit: cover;
-    border: 4px solid #2c3e50;
+    border: 3px solid var(--accent);
+    box-shadow: var(--shadow);
 }
 
 .profile-info {
@@ -56,53 +156,79 @@ body {
 
 .profile-info h1 {
     margin-top: 0;
-    color: #2c3e50;
+    margin-bottom: 10px;
+    color: var(--heading);
+    font-size: 2em;
 }
 
 .profile-info p {
     margin-bottom: 10px;
+    color: var(--text);
+}
+
+.looking-for {
+    color: var(--accent) !important;
+    font-weight: 600;
 }
 
 .contact-line {
-    margin: 15px 0;
+    margin: 12px 0;
+    color: var(--text-secondary);
+}
+
+.contact-line a {
+    color: var(--accent);
 }
 
 .social-links {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .social-links a {
-    color: #2c3e50;
+    color: var(--accent);
     text-decoration: none;
-    margin: 0 5px;
+    font-weight: 600;
+    margin: 0 6px;
+    transition: color 0.2s;
 }
 
 .social-links a:hover {
+    color: var(--accent-hover);
     text-decoration: underline;
 }
 
+/* ─── Divider ─── */
 .divider {
     border: 0;
     height: 1px;
-    background: #ddd;
+    background: var(--border);
     margin: 30px 0;
 }
 
+/* ─── Section Headings ─── */
 h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #2c3e50;
-    padding-bottom: 10px;
-    margin-top: 40px;
+    color: var(--heading);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 8px;
+    margin-top: 45px;
+    font-size: 1.5em;
 }
 
+/* ─── Items (Experience, Education, etc.) ─── */
 .item {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 #experience .item {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .item-content {
@@ -111,7 +237,7 @@ h2 {
 
 .item-content h3 {
     margin: 0 0 4px 0;
-    color: #2c3e50;
+    color: var(--heading);
 }
 
 .item-header {
@@ -122,25 +248,30 @@ h2 {
 
 .item-header h3 {
     margin: 0;
-    color: #2c3e50;
+    color: var(--heading);
 }
 
 .date {
-    color: #666;
+    color: var(--text-secondary);
     font-style: italic;
 }
 
-.mehrron-text {
-    color: #800000;
+.accent-text {
+    color: var(--accent);
+    font-weight: 600;
 }
 
+/* ─── News ─── */
 .news-container {
-    height: 80px;
+    max-height: 140px;
     overflow-y: auto;
-    border: 1px solid #ddd;
-    padding: 10px;
+    border: 1px solid var(--card-border);
+    padding: 14px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .news-container::-webkit-scrollbar {
@@ -148,33 +279,37 @@ h2 {
 }
 
 .news-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
 }
 
 .news-container::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: var(--border);
     border-radius: 6px;
-}
-
-.news-container::-webkit-scrollbar-thumb:hover {
-    background: #bbb;
 }
 
 .news-item {
     display: flex;
     gap: 8px;
     padding: 5px 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.news-item:last-child {
+    border-bottom: none;
 }
 
 .news-date {
-    color: #666;
+    color: var(--accent);
+    font-weight: 600;
     font-style: italic;
+    white-space: nowrap;
 }
 
 .news-content {
-    color: #2c3e50;
+    color: var(--text);
 }
 
+/* ─── Project Links ─── */
 .project-links {
     margin-top: 4px;
     margin-bottom: 6px;
@@ -183,66 +318,176 @@ h2 {
 }
 
 .project-links a {
-    color: #800000;
+    color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1em;
+    transition: color 0.2s;
 }
 
 .project-links a:hover {
     text-decoration: underline;
+    color: var(--accent-hover);
 }
 
 .project-links a[href="#"] {
     display: none;
 }
 
+/* ─── Thumbnails ─── */
 .item-thumbnail {
-    width: 180px;
-    min-width: 180px;
-    border-radius: 6px;
+    width: 170px;
+    min-width: 170px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
+/* ─── Technical Projects List ─── */
 #projects ul {
     list-style-type: none;
     padding-left: 0;
 }
 
 #projects li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 22px;
+    color: var(--text);
 }
 
 #projects li:before {
-    content: "•";
-    color: #2c3e50;
+    content: "\25B8";
+    color: var(--accent);
     position: absolute;
     left: 0;
+    font-weight: bold;
 }
 
+/* ─── Skills Tags ─── */
+.skills-category {
+    margin-bottom: 16px;
+}
+
+.skills-category-title {
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.88em;
+    border: 1px solid var(--card-border);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ─── Education Cards ─── */
+#education .item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* ─── Achievements ─── */
+#achievements .item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#achievements ul {
+    padding-left: 20px;
+}
+
+#achievements li {
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+#achievements li strong {
+    color: var(--accent);
+}
+
+/* ─── Recommendations ─── */
+#recommendations ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#recommendations li {
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    color: var(--text);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#recommendations li a {
+    color: var(--accent);
+}
+
+/* ─── Footer ─── */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    color: #666;
+    margin-top: 50px;
+    padding: 25px 0;
+    color: var(--text-secondary);
     font-size: 0.9em;
+    border-top: 1px solid var(--border);
 }
 
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
     .profile-section {
         flex-direction: column;
         text-align: center;
+        align-items: center;
+    }
+
+    .profile-pic {
+        width: 200px;
+        min-width: unset;
     }
 
     .top-nav {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        text-align: center;
     }
 
-    .top-nav a {
-        margin: 5px 0;
+    .top-nav a,
+    .nav-cv-btn,
+    .toggle-btn {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-spacer {
+        display: none;
     }
 
     #experience .item {
