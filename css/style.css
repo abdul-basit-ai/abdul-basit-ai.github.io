@@ -2,40 +2,44 @@
 
 :root {
     --bg: #ffffff;
-    --bg-secondary: #f4f6fb;
-    --text: #1a1a2e;
+    --bg-secondary: #f5f5f5;
+    --text: #1a1a1a;
     --text-secondary: #555;
-    --heading: #16213e;
-    --accent: #e94560;
-    --accent-hover: #c73650;
-    --nav-bg: #16213e;
+    --heading: #111111;
+    --accent: #1a1a1a;
+    --accent-hover: #333;
+    --institution: #1a5fb4;
+    --opportunity: #c41e1e;
+    --nav-bg: #111111;
     --nav-text: #fff;
     --card-bg: #ffffff;
-    --card-border: #e0e4ed;
-    --border: #d5dbe6;
-    --tag-bg: #eef1f8;
-    --tag-text: #16213e;
-    --shadow: 0 2px 12px rgba(22, 33, 62, 0.07);
-    --link: #0f3460;
+    --card-border: #e0e0e0;
+    --border: #d5d5d5;
+    --tag-bg: #f0f0f0;
+    --tag-text: #1a1a1a;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --link: #1a5fb4;
 }
 
 [data-theme="dark"] {
-    --bg: #0f0f23;
-    --bg-secondary: #1a1a3e;
-    --text: #e2e2e2;
-    --text-secondary: #a0a0b8;
-    --heading: #f0f0f5;
-    --accent: #e94560;
-    --accent-hover: #ff6b81;
-    --nav-bg: #16163a;
-    --nav-text: #e2e2e2;
-    --card-bg: #1a1a3e;
-    --card-border: #2a2a5a;
-    --border: #2a2a5a;
-    --tag-bg: #22224a;
-    --tag-text: #d0d0e8;
+    --bg: #111111;
+    --bg-secondary: #1a1a1a;
+    --text: #e5e5e5;
+    --text-secondary: #a0a0a0;
+    --heading: #f0f0f0;
+    --accent: #e5e5e5;
+    --accent-hover: #ccc;
+    --institution: #6aadff;
+    --opportunity: #ff5c5c;
+    --nav-bg: #1a1a1a;
+    --nav-text: #e5e5e5;
+    --card-bg: #1a1a1a;
+    --card-border: #2a2a2a;
+    --border: #2a2a2a;
+    --tag-bg: #222222;
+    --tag-text: #d0d0d0;
     --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    --link: #7ca1d4;
+    --link: #6aadff;
 }
 
 * {
@@ -92,24 +96,24 @@ a:hover {
 
 .top-nav a:hover,
 .top-nav a.active {
-    background-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.15);
     color: #fff;
 }
 
 .nav-cv-btn {
-    background: var(--accent);
-    color: #fff !important;
+    background: #fff;
+    color: #111 !important;
     padding: 7px 18px;
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
     font-size: 0.92em;
-    transition: background-color 0.25s;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 .nav-cv-btn:hover {
-    background: var(--accent-hover);
-    color: #fff !important;
+    background: #ddd;
+    color: #111 !important;
 }
 
 .nav-spacer {
@@ -169,7 +173,7 @@ a:hover {
     min-width: 240px;
     border-radius: 10px;
     object-fit: cover;
-    border: 3px solid var(--accent);
+    border: 3px solid var(--border);
     box-shadow: var(--shadow);
 }
 
@@ -190,7 +194,7 @@ a:hover {
 }
 
 .looking-for {
-    color: var(--accent) !important;
+    color: var(--opportunity) !important;
     font-weight: 600;
 }
 
@@ -200,7 +204,7 @@ a:hover {
 }
 
 .contact-line a {
-    color: var(--accent);
+    color: var(--link);
 }
 
 .social-links {
@@ -208,7 +212,7 @@ a:hover {
 }
 
 .social-links a {
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
     font-weight: 600;
     margin: 0 6px;
@@ -216,7 +220,7 @@ a:hover {
 }
 
 .social-links a:hover {
-    color: var(--accent-hover);
+    color: var(--accent);
     text-decoration: underline;
 }
 
@@ -231,7 +235,7 @@ a:hover {
 /* ─── Section Headings ─── */
 h2 {
     color: var(--heading);
-    border-bottom: 3px solid var(--accent);
+    border-bottom: 3px solid var(--border);
     padding-bottom: 8px;
     margin-top: 45px;
     font-size: 1.5em;
@@ -280,7 +284,7 @@ h2 {
 }
 
 .accent-text {
-    color: var(--accent);
+    color: var(--institution);
     font-weight: 600;
 }
 
@@ -322,7 +326,7 @@ h2 {
 }
 
 .news-date {
-    color: var(--accent);
+    color: var(--text-secondary);
     font-weight: 600;
     font-style: italic;
     white-space: nowrap;
@@ -341,7 +345,7 @@ h2 {
 }
 
 .project-links a {
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
     font-weight: 600;
     font-size: 1em;
@@ -350,7 +354,7 @@ h2 {
 
 .project-links a:hover {
     text-decoration: underline;
-    color: var(--accent-hover);
+    color: var(--accent);
 }
 
 .project-links a[href="#"] {
@@ -380,7 +384,7 @@ h2 {
 
 #projects li:before {
     content: "\25B8";
-    color: var(--accent);
+    color: var(--text-secondary);
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -445,7 +449,7 @@ h2 {
 }
 
 #achievements li strong {
-    color: var(--accent);
+    color: var(--heading);
 }
 
 /* ─── Recommendations ─── */
@@ -466,7 +470,7 @@ h2 {
 }
 
 #recommendations li a {
-    color: var(--accent);
+    color: var(--link);
 }
 
 /* ─── Footer ─── */
