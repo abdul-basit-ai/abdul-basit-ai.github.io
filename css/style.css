@@ -77,21 +77,22 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    gap: 8px;
-    padding: 12px 16px;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    gap: 2px;
+    padding: 6px 10px;
     background: var(--nav-bg);
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: var(--shadow);
 }
 
 .top-nav a {
     color: var(--nav-text);
     text-decoration: none;
-    padding: 7px 16px;
-    border-radius: 6px;
-    font-size: 0.92em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.78em;
+    white-space: nowrap;
     transition: background-color 0.25s, color 0.25s;
 }
 
@@ -104,11 +105,12 @@ a:hover {
 .nav-cv-btn {
     background: #fff;
     color: #111 !important;
-    padding: 7px 18px;
-    border-radius: 6px;
+    padding: 4px 10px;
+    border-radius: 4px;
     font-weight: 600;
     text-decoration: none;
-    font-size: 0.92em;
+    font-size: 0.78em;
+    white-space: nowrap;
     transition: background-color 0.25s, color 0.25s;
 }
 
@@ -124,28 +126,27 @@ a:hover {
 .nav-tools {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 .switch-group {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
-    padding: 3px;
-    backdrop-filter: blur(8px);
+    padding: 2px;
 }
 
 .switch-btn {
     border: none;
     background: transparent;
     color: rgba(255, 255, 255, 0.7);
-    padding: 5px 12px;
+    padding: 3px 8px;
     border-radius: 999px;
     cursor: pointer;
-    font-size: 0.82em;
+    font-size: 0.72em;
     font-weight: 600;
     font-family: inherit;
     transition: all 0.25s ease;
