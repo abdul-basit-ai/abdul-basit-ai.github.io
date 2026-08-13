@@ -48,7 +48,8 @@
 
 body {
     font-family: 'Lora', serif;
-    line-height: 1.7;
+    font-size: 0.88em;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     color: var(--text);
@@ -197,7 +198,7 @@ a:hover {
     margin-top: 0;
     margin-bottom: 8px;
     color: var(--heading);
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 .profile-section .bio {
@@ -249,10 +250,10 @@ a:hover {
 /* ─── Section Headings ─── */
 h2 {
     color: var(--heading);
-    border-bottom: 3px solid var(--border);
-    padding-bottom: 8px;
-    margin-top: 45px;
-    font-size: 1.5em;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 6px;
+    margin-top: 30px;
+    font-size: 1.2em;
 }
 
 /* ─── Items (Experience, Education, etc.) ─── */
