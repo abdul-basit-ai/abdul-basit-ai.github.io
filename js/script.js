@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.top-nav a');
     const sections = document.querySelectorAll('section, header');
 
-    // Active link highlighting on scroll
     window.addEventListener('scroll', () => {
         let current = "";
         sections.forEach((section) => {
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth scroll for nav links
     navLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -34,46 +32,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ─── Dark / Light Mode Toggle ───
-    const themeToggle = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    }
+    const btnEn = document.getElementById('btn-en');
+    const btnFr = document.getElementById('btn-fr');
+    const btnLight = document.getElementById('btn-light');
+    const btnDark = document.getElementById('btn-dark');
 
-    themeToggle.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-    });
-
-    // ─── EN / FR Language Toggle ───
-    const langToggle = document.getElementById('lang-toggle');
-    let currentLang = localStorage.getItem('lang') || 'en';
-
-    function applyLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem('lang', lang);
-        document.documentElement.setAttribute('lang', lang);
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
 
         document.querySelectorAll('[data-en][data-fr]').forEach(el => {
-            const text = el.getAttribute('data-' + lang);
-            if (text !== null) {
-                el.innerHTML = text;
+            const value = el.getAttribute('data-' + lang);
+            if (value !== null) {
+                el.innerHTML = value;
             }
         });
+
+        btnEn.classList.toggle('active', lang === 'en');
+        btnFr.classList.toggle('active', lang === 'fr');
+        localStorage.setItem('lang', lang);
     }
 
-    if (currentLang === 'fr') {
-        applyLanguage('fr');
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        btnLight.classList.toggle('active', theme === 'light');
+        btnDark.classList.toggle('active', theme === 'dark');
+        localStorage.setItem('theme', theme);
     }
 
-    langToggle.addEventListener('click', () => {
-        applyLanguage(currentLang === 'en' ? 'fr' : 'en');
-    });
+    btnEn.addEventListener('click', () => setLanguage('en'));
+    btnFr.addEventListener('click', () => setLanguage('fr'));
+    btnLight.addEventListener('click', () => setTheme('light'));
+    btnDark.addEventListener('click', () => setTheme('dark'));
 
-    // ─── Last Updated Date ───
+    const savedLang = localStorage.getItem('lang') || 'en';
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setLanguage(savedLang);
+    setTheme(savedTheme);
+
     const lastUpdatedEl = document.getElementById('last-updated');
     if (lastUpdatedEl) {
         const now = new Date();

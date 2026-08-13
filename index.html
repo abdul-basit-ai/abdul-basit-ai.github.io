@@ -35,8 +35,16 @@
             <a href="#recommendations" data-en="References" data-fr="Références">References</a>
             <a href="BASIT_Abdul_Resume.pdf" target="_blank" class="nav-cv-btn">CV / Resume</a>
             <span class="nav-spacer"></span>
-            <button class="toggle-btn" id="theme-toggle" title="Toggle dark/light mode">Light / Dark</button>
-            <button class="toggle-btn" id="lang-toggle" title="Switch language">EN / FR</button>
+            <div class="nav-tools">
+                <div class="switch-group" aria-label="Language switcher">
+                    <button class="switch-btn active" id="btn-en">EN</button>
+                    <button class="switch-btn" id="btn-fr">FR</button>
+                </div>
+                <div class="switch-group" aria-label="Theme switcher">
+                    <button class="switch-btn active" id="btn-light">Light</button>
+                    <button class="switch-btn" id="btn-dark">Dark</button>
+                </div>
+            </div>
         </nav>
 
         <header class="profile-section">

@@ -116,21 +116,44 @@ a:hover {
     flex-grow: 1;
 }
 
-.toggle-btn {
-    background: transparent;
-    border: 1.5px solid rgba(255, 255, 255, 0.35);
-    color: var(--nav-text);
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.85em;
-    transition: background-color 0.25s, border-color 0.25s;
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.6);
+.switch-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 3px;
+    backdrop-filter: blur(8px);
+}
+
+.switch-btn {
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.82em;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.25s ease;
+}
+
+.switch-btn.active {
+    background: #fff;
+    color: var(--nav-bg);
+}
+
+.switch-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
 }
 
 /* ─── Profile Section ─── */
@@ -480,14 +503,18 @@ footer {
     }
 
     .top-nav a,
-    .nav-cv-btn,
-    .toggle-btn {
+    .nav-cv-btn {
         display: block;
         text-align: center;
     }
 
     .nav-spacer {
         display: none;
+    }
+
+    .nav-tools {
+        justify-content: center;
+        width: 100%;
     }
 
     #experience .item {
