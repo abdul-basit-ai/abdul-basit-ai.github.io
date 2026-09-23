@@ -26,7 +26,7 @@
     <main class="container">
         <nav class="top-nav">
             <a href="#" class="active" data-en="Home" data-fr="Accueil">Home</a>
-            <a href="#news" data-en="News" data-fr="Actualités">News</a>
+            <!-- <a href="#news" data-en="News" data-fr="Actualités">News</a> -->
             <a href="#education" data-en="Education" data-fr="Formation">Education</a>
             <a href="#experience" data-en="Experience" data-fr="Expérience">Experience</a>
             <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
@@ -70,7 +70,7 @@
                     </div>
                 </header>
 
-                <section id="news">
+                <!-- <section id="news">
                     <h2 data-en="Latest News" data-fr="Dernières Actualités">Latest News</h2>
                     <div id="news-feed" class="news-container">
                         <div class="news-item">
@@ -122,7 +122,7 @@
                             <span class="news-content" data-en="Bachelor's thesis awarded research funding (NGIRI)." data-fr="Mémoire de Licence financé par une bourse de recherche (NGIRI).">Bachelor's thesis awarded research funding (NGIRI).</span>
                         </div>
                     </div>
-                </section>
+                </section> -->
             </div>
 
             <div class="hero-right">
@@ -160,6 +160,23 @@
                     <p data-en="Modeled complex network topologies and developed performance-optimized GNNs for anomaly detection. Adapted ANEMONE into an edge-aware GATv2 self-supervised framework. Designed a physics-informed synthetic anomaly generator. Built end-to-end ML pipelines with distributed training on HPC clusters using Slurm."
                        data-fr="Modélisation de topologies réseau complexes et développement de GNN optimisés pour la détection d'anomalies. Adaptation d'ANEMONE en un framework autosupervisé edge-aware GATv2. Conception d'un générateur d'anomalies synthétiques. Construction de pipelines ML de bout en bout avec entraînement distribué sur clusters HPC via Slurm.">
                         Modeled complex network topologies and developed performance-optimized GNNs for anomaly detection. Adapted ANEMONE into an edge-aware GATv2 self-supervised framework. Designed a physics-informed synthetic anomaly generator. Built end-to-end ML pipelines with distributed training on HPC clusters using Slurm.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/projects/pyspice-openfoam.png" alt="LLM-Orchestrated Power-Electronics Design Platform (Pyspice-Openfoam-Agent)" class="item-thumbnail" onerror="this.style.display='none'">
+                <div class="item-content">
+                    <div class="item-header">
+                        <h3 data-en="LLM-Orchestrated Power-Electronics Design Platform (Pyspice-Openfoam-Agent)" data-fr="Plateforme de Conception d'Électronique de Puissance Orchestrée par LLM (Pyspice-Openfoam-Agent)">LLM-Orchestrated Power-Electronics Design Platform (Pyspice-Openfoam-Agent)</h3>
+                        <span class="date">2026</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">Report</a>
+                        <a href="#">Code</a>
+                    </div>
+                    <p data-en="Built an agentic DC-DC converter design platform on a strict deterministic/LLM separation: a LangGraph ReAct agent orchestrates while every physics number comes from unit-tested engineering code. Integrated SPICE transients (PySpice/ngspice), Type-III control loops (python-control), 3D CHT thermal solves (OpenFOAM), and NSGA-II optimization (pymoo). Validated against real TI evaluation hardware: 0.22 pp mean absolute efficiency error on a buck EVM, with Dockerized environment, Streamlit dashboard, and a 200+-test suite."
+                       data-fr="Plateforme agentique de conception de convertisseurs DC-DC avec séparation stricte déterministe/LLM : un agent ReAct LangGraph orchestre, chaque valeur physique provenant de code d'ingénierie testé unitairement. Intègre des transitoires SPICE (PySpice/ngspice), des boucles de contrôle Type-III (python-control), des calculs thermiques CHT 3D (OpenFOAM) et l'optimisation NSGA-II (pymoo). Validé sur matériel TI réel : erreur d'efficacité absolue moyenne de 0,22 pp sur un buck EVM, avec environnement Docker, dashboard Streamlit et suite de 200+ tests.">
+                        Built an agentic DC-DC converter design platform on a strict deterministic/LLM separation: a LangGraph ReAct agent orchestrates while every physics number comes from unit-tested engineering code. Integrated SPICE transients (PySpice/ngspice), Type-III control loops (python-control), 3D CHT thermal solves (OpenFOAM), and NSGA-II optimization (pymoo). Validated against real TI evaluation hardware: 0.22 pp mean absolute efficiency error on a buck EVM, with Dockerized environment, Streamlit dashboard, and a 200+-test suite.
                     </p>
                 </div>
             </div>
@@ -347,9 +364,11 @@
             <p class="skills-line"><strong data-en="Reinforcement Learning:" data-fr="Apprentissage par Renforcement :">Reinforcement Learning:</strong> Value Iteration, Policy Iteration, PPO, DPO, GRPO</p>
             <p class="skills-line"><strong data-en="Computer Vision:" data-fr="Vision par Ordinateur :">Computer Vision:</strong> NeRF, Gaussian Splatting, SDF, Meshes / Voxels, Volume Rendering, Ray Tracing</p>
             <p class="skills-line"><strong data-en="Graph Machine Learning:" data-fr="Apprentissage sur Graphes :">Graph Machine Learning:</strong> GCN, GAT / GATv2, Community Detection, Knowledge Graphs, GraphRAG</p>
-            <p class="skills-line"><strong data-en="Agentic AI:" data-fr="IA Agentique :">Agentic AI:</strong> LangChain, LangGraph, Prompt Engineering, Tool Calling, MCP, RAG</p>
+            <p class="skills-line"><strong data-en="Agentic AI:" data-fr="IA Agentique :">Agentic AI:</strong> Reasoning Loops, LangChain, LangGraph, LangSmith, Prompt Engineering, Tool Calling, MCP, RAG, Multi-tool Orchestration, LLM Provenance / Auditability</p>
+            <p class="skills-line"><strong data-en="Simulation &amp; Scientific Computing:" data-fr="Simulation &amp; Calcul Scientifique :">Simulation &amp; Scientific Computing:</strong> SPICE Circuit Simulation, OpenFOAM CFD/CHT, PyVista 3D Visualization, NumPy/SciPy Signal Analysis, python-control, pymoo (NSGA-II Multi-objective Optimization), Physics-based Model Validation Against Hardware Measurements</p>
+            <p class="skills-line"><strong data-en="Engineering Practices:" data-fr="Pratiques d'Ingénierie :">Engineering Practices:</strong> Deterministic-vs-LLM System Separation, Numerical Convergence/Stability Debugging, Regression Test Suites (200+ Tests), Technical Auditing (Root-cause, Fix, Verify), LaTeX Technical Writing</p>
             <p class="skills-line"><strong data-en="Explainability:" data-fr="Explicabilité :">Explainability:</strong> SHAP, LIME, Post-hoc Feature Attribution</p>
-            <p class="skills-line"><strong data-en="Tools &amp; Platforms:" data-fr="Outils &amp; Plateformes :">Tools &amp; Platforms:</strong> Git / GitHub, Docker, Linux, Kubernetes, CI/CD, FastAPI, MLOps, Grafana, Slurm, W&amp;B</p>
+            <p class="skills-line"><strong data-en="Tools &amp; Platforms:" data-fr="Outils &amp; Plateformes :">Tools &amp; Platforms:</strong> Git / GitHub, Docker (Canonical Reproducible Environments, Containerized Simulation Stacks), Linux, CI/CD, FastAPI, MLOps, Grafana, Slurm, Streamlit</p>
             <p class="skills-line"><strong data-en="Languages:" data-fr="Langues :">Languages:</strong> <span data-en="English (Fluent), French (Actively Learning)" data-fr="Anglais (Courant), Français (En cours d'apprentissage)">English (Fluent), French (Actively Learning)</span></p>
         </section>
 
