@@ -12,7 +12,7 @@
     [.56,.74,1],[.72,.81,1],[.47,.59,1],[.88,.28,1]
   ];
   let points=initial.map(([x,y,label])=>({x,y,label}));
-  let mode='mint',k=3,width=0,height=0,aspect=1,query={x:.5,y:.5},hasQuery=false;
+  let mode='ask',k=3,width=0,height=0,aspect=1,query={x:.5,y:.5},hasQuery=false;
   let inView=false,frame=0,fieldDirty=true;
   const field=document.createElement('canvas');field.width=128;field.height=96;
   const fieldContext=field.getContext('2d');
@@ -38,7 +38,7 @@
   function buildField(){
     const image=fieldContext.createImageData(field.width,field.height);
     const distances=new Float64Array(k),labels=new Uint8Array(k);
-    const palette=Array.from({length:k+1},(_,mint)=>[229+(218-229)*mint/k,219+(235-219)*mint/k,239+(200-239)*mint/k]);
+    const palette=Array.from({length:k+1},(_,mint)=>[199+(190-199)*mint/k,179+(214-179)*mint/k,219+(159-219)*mint/k]);
     for(let y=0;y<field.height;y++)for(let x=0;x<field.width;x++){
       distances.fill(Infinity);labels.fill(1);
       const px=(x+.5)/field.width,py=(y+.5)/field.height;
@@ -111,7 +111,7 @@
   root.querySelectorAll('[data-learning-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.learningMode)));
   $('#learning-neighbours').addEventListener('input',event=>{k=Number(event.target.value);fieldDirty=true;updateAnswer();requestDraw();});
   $('#learning-undo').addEventListener('click',()=>{if(points.length<=initial.length)return;points.pop();fieldDirty=true;updateAnswer();requestDraw();announce(tr('Last example removed.','Dernier exemple supprimé.'));});
-  $('#learning-reset').addEventListener('click',()=>{points=initial.map(([x,y,label])=>({x,y,label}));hasQuery=false;query={x:.5,y:.5};k=3;$('#learning-neighbours').value='3';fieldDirty=true;setMode('mint');announce(tr('Back to the original examples.','Les exemples initiaux sont rétablis.'));});
+  $('#learning-reset').addEventListener('click',()=>{points=initial.map(([x,y,label])=>({x,y,label}));hasQuery=false;query={x:.5,y:.5};k=3;$('#learning-neighbours').value='3';fieldDirty=true;setMode('ask');announce(tr('Back to the original examples.','Les exemples initiaux sont rétablis.'));});
   function localize(){
     canvas.setAttribute('aria-label',tr('Interactive nearest-neighbour classifier. Arrow keys move the cursor. Enter adds an example or tests a point.','Classificateur interactif par plus proches voisins. Les flèches déplacent le curseur. Entrée ajoute un exemple ou teste un point.'));
     $('.learning-modes').setAttribute('aria-label',tr('Choose an action','Choisir une action'));updateAnswer();requestDraw();
@@ -124,5 +124,5 @@
   new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(!inView&&frame){cancelAnimationFrame(frame);frame=0;}requestDraw();}).observe(canvas);
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else requestDraw();});
   document.addEventListener('portfolio:languagechange',localize);
-  setMode('mint');localize();
+  setMode('ask');localize();
 })();

@@ -61,7 +61,7 @@ The story explains the data pipeline, five CNN comparisons, the accuracy/device-
 
 ## The Curiosity Corner
 
-Visitors can add Mint and Plum examples to a decision map, choose how many neighbours vote, and ask the model about a point. The answer, highlighted neighbours, and map come from a real nearest-neighbour classifier running locally. Undo and reset make exploration reversible. Mouse, touch, and arrow keys plus Enter/Space are supported, with English/French controls and screen-reader announcements for explicit actions.
+The playground starts in Ask the model mode, including after reset, so moving over or tapping the board tests a point without adding examples. Visitors can switch to adding Mint and Plum examples to the decision map and choose how many neighbours vote. The answer, highlighted neighbours, and map come from a real nearest-neighbour classifier running locally. Undo and reset make exploration reversible. Mouse, touch, and arrow keys plus Enter/Space are supported, with English/French controls and screen-reader announcements for explicit actions.
 
 The board starts with 16 toy examples and allows up to 64. A cached 128×96 decision field redraws only when data, neighbour count, or board size changes. Pointer updates are coalesced into individual animation frames; there is no idle animation loop. Pixel density is capped at 2, and drawing stops offscreen or in a hidden tab. Examples are not uploaded or persisted.
 
