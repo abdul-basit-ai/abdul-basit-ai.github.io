@@ -24,6 +24,18 @@ function renderProjects() {
   $('#project-grid').innerHTML = PROJECTS.map(p => '<article class="project-card"'+(filter !== 'all' && p.category !== filter ? ' hidden' : '')+'><button class="visual-button" data-project="'+p.id+'" aria-label="'+escapeHTML(t('Explore ','Découvrir ')+(language === 'fr' && p.titleFr || p.title))+'">'+visual(p)+'</button><div class="project-meta"><span>'+escapeHTML(localized(p.type))+'</span><span>2026</span></div><h3><button data-project="'+p.id+'">'+escapeHTML(language === 'fr' && p.titleFr || p.title)+'</button></h3><p>'+escapeHTML(localized(p.summary))+'</p><div class="tags">'+p.tags.map(tag=>'<span>'+escapeHTML(tag)+'</span>').join('')+'</div></article>').join('');
   const count = PROJECTS.filter(p => filter === 'all' || p.category === filter).length;
   $('#project-count').textContent = count + t(' projects', ' projets');
+  renderHeroPicks();
+}
+function renderHeroPicks() {
+  const picks = [
+    ['voltforge', ['An agent that engineers.', 'Un agent qui conçoit.']],
+    ['playora', ['A voice. Five ways to play.', 'Une voix. Cinq façons de jouer.']],
+    ['spatialforge', ['A little more hands-on.', 'Un peu plus concret.']]
+  ];
+  $('#hero-picks').innerHTML = picks.map(([id, caption]) => {
+    const p = PROJECTS.find(project => project.id === id);
+    return '<button class="hero-pick" data-project="'+p.id+'" aria-label="'+escapeHTML(t('Explore ', 'Découvrir ')+p.title)+'"><span class="pick-thumbnail" aria-hidden="true">'+visual(p)+'</span><span class="pick-copy"><strong>'+p.title+'</strong><span>'+escapeHTML(localized(caption))+'</span></span><span class="pick-open" aria-hidden="true">+</span></button>';
+  }).join('');
 }
 function renderArchive() {
   $('#archive-list').innerHTML = ARCHIVE.map(([title,repo]) => '<div class="archive-item"><span>'+escapeHTML(title)+'</span><a href="'+escapeHTML(repo.startsWith('https://') ? repo : 'https://github.com/abdul-basit-ai/'+repo)+'" target="_blank" rel="noopener noreferrer">'+t('Explore','Explorer')+'</a></div>').join('');
@@ -46,6 +58,9 @@ function applyLanguage() {
   $('.filters').setAttribute('aria-label',t('Filter projects','Filtrer les projets'));
   $('.shape-controls').setAttribute('aria-label',t('Point cloud shape','Forme du nuage de points'));
   $('#network-canvas').setAttribute('aria-label',t('Rotating point cloud. Change its form using the buttons below.','Nuage de points en rotation. Changez sa forme avec les boutons ci-dessous.'));
+  $('#pip-button').setAttribute('aria-label',t('Meet Pip, the little studio bird','Rencontrer Pip, le petit oiseau du studio'));
+  $('#pip-close').setAttribute('aria-label',t('Close Pip menu','Fermer le menu de Pip'));
+  $('.hero-picks').setAttribute('aria-label',t('A few things I have built','Quelques-unes de mes créations'));
   renderProjects(); renderArchive();
   if (dialog.open) renderDialog();
   updateMotionLabel();
@@ -57,10 +72,13 @@ $$('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
   renderProjects();
 }));
 let dialogTrigger = null;
-$('#project-grid').addEventListener('click',event=>{
+function openProject(id, trigger) {
+  dialogTrigger=trigger;openProjectId=id;renderDialog();dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');$('#dialog-close').focus();
+}
+document.addEventListener('click',event=>{
   const button=event.target.closest('[data-project]');
   if(!button)return;
-  dialogTrigger=button;openProjectId=button.dataset.project;renderDialog();dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');$('#dialog-close').focus();
+  openProject(button.dataset.project, button);
 });
 $('#dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
@@ -123,3 +141,47 @@ reducedMotion.addEventListener('change',event=>{paused=event.matches;updateMotio
 document.addEventListener('visibilitychange',syncAnimation);
 new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncAnimation();}).observe(canvas);
 setShape('torus');new ResizeObserver(resizeCanvas).observe(canvas);applyLanguage();syncAnimation();
+
+// Pip reacts to input only: no perpetual animation or cursor-following loop.
+const pipButton=$('#pip-button'),pipPanel=$('#pip-panel'),scene=$('.hero-scene');
+let pipAnimationTimer,lastPick=-1,audioContext;
+function closePip(restoreFocus=false){pipPanel.hidden=true;pipButton.setAttribute('aria-expanded','false');if(restoreFocus)pipButton.focus();}
+function greetPip(){
+  pipButton.classList.remove('pip-hop');
+  clearTimeout(pipAnimationTimer);
+  requestAnimationFrame(()=>{pipButton.classList.add('pip-hop');pipAnimationTimer=setTimeout(()=>pipButton.classList.remove('pip-hop'),700);});
+}
+pipButton.addEventListener('click',()=>{const open=pipPanel.hidden;pipPanel.hidden=!open;pipButton.setAttribute('aria-expanded',String(open));greetPip();});
+$('#pip-close').addEventListener('click',()=>closePip(true));
+document.addEventListener('click',event=>{if(!event.target.closest('.bird-companion'))closePip();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!pipPanel.hidden){closePip(true);}});
+$('#pip-surprise').addEventListener('click',()=>{
+  let index=Math.floor(Math.random()*PROJECTS.length);
+  if(index===lastPick)index=(index+1)%PROJECTS.length;
+  lastPick=index;closePip();openProject(PROJECTS[index].id,pipButton);
+});
+$('#pip-chirp').addEventListener('click',async()=>{
+  greetPip();
+  const message=$('#pip-message');
+  message.dataset.en='Chirp! That’s bird for “thanks for stopping by.”';
+  message.dataset.fr='Cui-cui ! Ça veut dire « merci pour la visite ».';
+  message.textContent=message.dataset[language];
+  const AudioEngine=window.AudioContext||window.webkitAudioContext;
+  if(!AudioEngine)return;
+  try{
+    audioContext??=new AudioEngine();await audioContext.resume();
+    for(let i=0;i<2;i++){
+      const oscillator=audioContext.createOscillator(),gain=audioContext.createGain(),start=audioContext.currentTime+i*.15;
+      oscillator.type='sine';oscillator.frequency.setValueAtTime(2100,start);oscillator.frequency.exponentialRampToValueAtTime(3600,start+.05);oscillator.frequency.exponentialRampToValueAtTime(2500,start+.11);
+      gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(.035,start+.015);gain.gain.exponentialRampToValueAtTime(.001,start+.12);
+      oscillator.connect(gain);gain.connect(audioContext.destination);oscillator.start(start);oscillator.stop(start+.13);oscillator.onended=()=>{oscillator.disconnect();gain.disconnect();};
+    }
+  }catch{/* The visual greeting still works if audio is unavailable. */}
+});
+scene.addEventListener('pointermove',event=>{
+  if(reducedMotion.matches||event.pointerType==='touch')return;
+  const rect=scene.getBoundingClientRect();
+  scene.style.setProperty('--pip-look-x',Math.max(-2,Math.min(2,(event.clientX-rect.left-rect.width*.75)/100))+'px');
+  scene.style.setProperty('--pip-look-y',Math.max(-1.5,Math.min(1.5,(event.clientY-rect.top-rect.height*.7)/100))+'px');
+},{passive:true});
+scene.addEventListener('pointerleave',()=>{scene.style.setProperty('--pip-look-x','0px');scene.style.setProperty('--pip-look-y','0px');});
