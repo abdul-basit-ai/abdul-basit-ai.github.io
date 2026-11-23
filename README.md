@@ -20,7 +20,8 @@ Open http://127.0.0.1:8080. The site can also be opened directly from index.html
 - `css/project-workflows.css` and `js/project-workflows.js`: exclusive hover/focus workflow previews in Selected Work.
 - `js/bird-flight.js`: one brief arrival flight; Pip then stays on the hero illustration.
 - `js/projects.js`: six selected case studies and the research archive. Paired strings contain English first, French second.
-- `js/script.js`: filters, accessible native project dialogs, navigation, language persistence, copy email, the Canvas point-cloud experiment, and Pip’s optional interactions.
+- `js/script.js`: filters, accessible native project dialogs, navigation, language persistence, copy email, and Pip’s optional interactions.
+- `css/learning-playground.css` and `js/learning-playground.js`: the interactive nearest-neighbour classifier in The Curiosity Corner.
 - `images/curiosity-landscape.webp`: original generated illustration, compressed to 137,520 bytes.
 - `images/projects/plant-cdpr-hardware.jpg`: the actual prototype photograph extracted from Figure 2.5 of the supplied defense report.
 - `Abdul_Basit_CV-en.pdf` and `Abdul_Basit_CV-fr.pdf`: language-specific downloads.
@@ -40,7 +41,7 @@ Project descriptions were curated from these public READMEs in November 2026:
 
 Hackathon participation and the OpenAI DevDay top-four finalist placement come from the supplied English CV. No new placements or awards were inferred. Case studies preserve meaningful validation limits from the READMEs. The project artwork is an original schematic illustration, not a screenshot or live benchmark. Private repository contents are not included.
 
-The opening section introduces Abdul personally, states his search for a first full-time AI/ML role, and offers three project previews. The full projects section precedes the journey. Education and experience use the supplied CVs, with the IBISC lab affiliation supplied directly by Abdul. Dates and article titles in the writing section come from the public [Medium RSS feed](https://medium.com/feed/@basitmal36). Article titles remain in their original English; navigation, dates, and interface copy support English and French. The point-cloud experiment is in The Curiosity Corner, after the writing section; hackathons remain in the lab.
+The opening section introduces Abdul personally, states his search for a first full-time AI/ML role, and offers three project previews. Selected Work is followed immediately by the Edge AI/CDPR story, then the journey. Education and experience use the supplied CVs, with the IBISC lab affiliation supplied directly by Abdul. Dates and article titles in the writing section come from the public [Medium RSS feed](https://medium.com/feed/@basitmal36). Article titles remain in their original English; navigation, dates, and interface copy support English and French. The Curiosity Corner follows writing; hackathons remain in the lab. The header links to [Abdul on X](https://x.com/basit_view) immediately after Writing. A small bilingual footer date records the latest site update; update its text and `datetime` when publishing changes.
 
 The illustrated setting is original, inspired by the personal atmosphere of the supplied portfolio reference. Pip is an inline SVG bird. Eye movement responds only to pointer events inside the illustration; hopping is brief and input-triggered. Pip flies in once on load, lands on the illustration, and opens its options without moving keyboard focus. It stays in that position as the page scrolls. The arrival uses one temporary SVG overlay and the Web Animations API; wing animation stops when the overlay is removed. Reduced motion skips the flight. Sound requires an explicit “Hear a chirp” action and is synthesized locally. Pip can also open a project case study. There is no autoplay audio, remote audio asset, extra animation library, or persistent hero animation loop.
 
@@ -54,9 +55,15 @@ The opening previews are Financial Agent, VoltForge, and Playora. SpatialForge r
 
 ## Plant monitoring and robotics story
 
-The feature immediately after Orange uses the supplied `Final Defense Report.pdf`: pages 27–31 for the 7,200-image / 18-class dataset, preprocessing, deployment flow, and integrated prototype; pages 41–45 for the Raspberry Pi camera and training setup; and Table 4.1 on page 61 for model results. The photograph is extracted unchanged from Figure 2.5. The final-year team is credited as Abdul Basit, Aniqa Firdous, and Abdul Aziz. Joystick-guided robot navigation also uses the supplied CV and Abdul’s account of his work.
+The feature immediately after Selected Work uses the supplied `Final Defense Report.pdf`: pages 27–31 for the 7,200-image / 18-class dataset, preprocessing, deployment flow, and integrated prototype; pages 41–45 for the Raspberry Pi camera and training setup; and Table 4.1 on page 61 for model results. The report itself stays local and is excluded by `.gitignore`. The photograph is extracted unchanged from Figure 2.5. The final-year team is credited as Abdul Basit, Aniqa Firdous, and Abdul Aziz. Joystick-guided robot navigation also uses the supplied CV and Abdul’s account of his work.
 
 The story explains the data pipeline, five CNN comparisons, the accuracy/device-resource trade-off, TensorFlow Lite inference on Raspberry Pi 4, and camera placement on the CDPR. It accurately distinguishes the reported ResNet50 test accuracy of 98.61% from the MobileNet-family edge deployment choice. It makes no field-accuracy or device-latency claim. Like the Orange feature, it autoplays while visible and allows manual selection, pause/resume, reset, and reduced motion. Illustrated scenes are labelled as such.
+
+## The Curiosity Corner
+
+Visitors can add Mint and Plum examples to a decision map, choose how many neighbours vote, and ask the model about a point. The answer, highlighted neighbours, and map come from a real nearest-neighbour classifier running locally. Undo and reset make exploration reversible. Mouse, touch, and arrow keys plus Enter/Space are supported, with English/French controls and screen-reader announcements for explicit actions.
+
+The board starts with 16 toy examples and allows up to 64. A cached 128×96 decision field redraws only when data, neighbour count, or board size changes. Pointer updates are coalesced into individual animation frames; there is no idle animation loop. Pixel density is capped at 2, and drawing stops offscreen or in a hidden tab. Examples are not uploaded or persisted.
 
 ## Using a custom domain with GitHub Pages
 
@@ -73,9 +80,9 @@ The domain is not currently owned or connected; the existing GitHub Pages addres
 
 ## Accessibility and performance
 
-Native dialogs provide keyboard focus containment and Escape-to-close behavior. Filters and shape controls expose pressed state. Mobile navigation exposes expanded state. The hero respects reduced-motion preferences, has a pause control, caps pixel density, and suspends animation offscreen and in background tabs. Fonts fall back to system fonts if Google Fonts is unavailable. No tracking or runtime GitHub API calls are used.
+Native dialogs provide keyboard focus containment and Escape-to-close behavior. Filters and learning modes expose pressed state. Mobile navigation exposes expanded state. Pip respects reduced-motion preferences, and the two story animations offer pause controls and stop offscreen or in background tabs. Fonts fall back to system fonts if Google Fonts is unavailable. No tracking or runtime GitHub API calls are used.
 
-Verified in headless Chrome at 360, 390, 768, 1024, and 1440 pixels in English and French: no horizontal overflow, all six dialogs and Escape behavior, filters, shape selection, pause, language persistence, mobile navigation, reduced motion, and successful local asset/CV responses. Desktop and mobile screenshots were visually reviewed.
+Verified in headless Chrome at 360, 390, 768, 1024, and 1440 pixels in English and French: no horizontal overflow, project dialogs and Escape behavior, filters, language persistence, mobile navigation, reduced motion, and successful local asset/CV responses. The learning playground was checked for adding examples, changing predictions with neighbour count, query mode, undo/reset, keyboard and touch input, and no idle animation loop. Section order and the footer update date were also checked. Desktop and mobile screenshots were visually reviewed.
 
 The revised opening was also checked for project-preview visibility at 1440×900, zero idle animation-frame requests, keyboard operation and focus restoration for Pip, reduced-motion behavior, and a bird menu contained within the mobile viewport.
 
