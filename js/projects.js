@@ -74,42 +74,6 @@ const PROJECTS = [
     ]
   },
   {
-    "id": "spatialforge",
-    "title": "SpatialForge",
-    "category": "interfaces",
-    "type": [
-      "Spatial interaction",
-      "Interaction spatiale"
-    ],
-    "visual": "spatial",
-    "repo": "spatialforge-ai",
-    "tags": [
-      "Three.js",
-      "Hand tracking",
-      "Voice guidance"
-    ],
-    "summary": [
-      "A hands-on 3D assembly workbench with camera gestures, guided corrections, and step-aware placement.",
-      "Un atelier d’assemblage 3D avec gestes caméra, corrections guidées et placement sensible aux étapes."
-    ],
-    "challenge": [
-      "Assembly guidance needs to explain not only where a part goes, but whether it is the right part, correctly rotated, and ready to be placed.",
-      "Le guidage doit vérifier la bonne pièce, son orientation et les prérequis avant le placement."
-    ],
-    "approach": [
-      "Built a browser workbench for a precision tray and a small valve assembly. Mouse, touch, and camera hand tracking share placement rules. A co-pilot gives captioned and spoken corrections when a target, prerequisite, or rotation is wrong.",
-      "Atelier web avec plateau de formes et assemblage de valve. Souris, tactile et suivi des mains partagent les règles. Un copilote explique les erreurs par texte et voix."
-    ],
-    "outcome": [
-      "Two interactive scenarios, scenario-specific run records, and a camera pass-through mode with pinch-to-place interaction. Local browser storage keeps the core demo usable without optional services.",
-      "Deux scénarios interactifs, des historiques par scénario et un mode caméra avec placement par pincement. Le stockage local permet une démonstration autonome."
-    ],
-    "scope": [
-      "The camera experience is a screen-locked overlay. Room anchoring, physical-part vision verification, and PDF scene compilation are future phases.",
-      "L’expérience caméra est une surcouche liée à l’écran. L’ancrage spatial, la vérification de pièces réelles et la compilation de scènes PDF restent à venir."
-    ]
-  },
-  {
     "id": "finance",
     "title": "Financial Agentic System",
     "category": "agents",
@@ -216,6 +180,42 @@ const PROJECTS = [
     "scope": [
       "The sample is caption/transcript search, not an exhaustive brand audit. Demo fixtures are fictional; full live-provider acceptance is separately documented in the repository.",
       "L’échantillon repose sur la recherche textuelle, pas sur un audit exhaustif. Les données de démonstration sont fictives ; la validation complète des services est documentée séparément."
+    ]
+  },
+  {
+    "id": "spatialforge",
+    "title": "SpatialForge",
+    "category": "interfaces",
+    "type": [
+      "Spatial interaction",
+      "Interaction spatiale"
+    ],
+    "visual": "spatial",
+    "repo": "spatialforge-ai",
+    "tags": [
+      "Three.js",
+      "Hand tracking",
+      "Voice guidance"
+    ],
+    "summary": [
+      "A hands-on 3D assembly workbench with camera gestures, guided corrections, and step-aware placement.",
+      "Un atelier d’assemblage 3D avec gestes caméra, corrections guidées et placement sensible aux étapes."
+    ],
+    "challenge": [
+      "Assembly guidance needs to explain not only where a part goes, but whether it is the right part, correctly rotated, and ready to be placed.",
+      "Le guidage doit vérifier la bonne pièce, son orientation et les prérequis avant le placement."
+    ],
+    "approach": [
+      "Built a browser workbench for a precision tray and a small valve assembly. Mouse, touch, and camera hand tracking share placement rules. A co-pilot gives captioned and spoken corrections when a target, prerequisite, or rotation is wrong.",
+      "Atelier web avec plateau de formes et assemblage de valve. Souris, tactile et suivi des mains partagent les règles. Un copilote explique les erreurs par texte et voix."
+    ],
+    "outcome": [
+      "Two interactive scenarios, scenario-specific run records, and a camera pass-through mode with pinch-to-place interaction. Local browser storage keeps the core demo usable without optional services.",
+      "Deux scénarios interactifs, des historiques par scénario et un mode caméra avec placement par pincement. Le stockage local permet une démonstration autonome."
+    ],
+    "scope": [
+      "The camera experience is a screen-locked overlay. Room anchoring, physical-part vision verification, and PDF scene compilation are future phases.",
+      "L’expérience caméra est une surcouche liée à l’écran. L’ancrage spatial, la vérification de pièces réelles et la compilation de scènes PDF restent à venir."
     ]
   }
 ];

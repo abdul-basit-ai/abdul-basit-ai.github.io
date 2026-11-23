@@ -28,13 +28,14 @@ function renderProjects() {
 }
 function renderHeroPicks() {
   const picks = [
+    ['finance', ['Financial reasoning, with receipts.', 'Raisonnement financier, sources à l’appui.']],
     ['voltforge', ['An agent that engineers.', 'Un agent qui conçoit.']],
-    ['playora', ['A voice. Five ways to play.', 'Une voix. Cinq façons de jouer.']],
-    ['spatialforge', ['A little more hands-on.', 'Un peu plus concret.']]
+    ['playora', ['A voice. Five ways to play.', 'Une voix. Cinq façons de jouer.']]
   ];
   $('#hero-picks').innerHTML = picks.map(([id, caption]) => {
     const p = PROJECTS.find(project => project.id === id);
-    return '<button class="hero-pick" data-project="'+p.id+'" aria-label="'+escapeHTML(t('Explore ', 'Découvrir ')+p.title)+'"><span class="pick-thumbnail" aria-hidden="true">'+visual(p)+'</span><span class="pick-copy"><strong>'+p.title+'</strong><span>'+escapeHTML(localized(caption))+'</span></span><span class="pick-open" aria-hidden="true">+</span></button>';
+    const title = id === 'finance' ? t('Financial Agent', 'Agent financier') : p.title;
+    return '<button class="hero-pick" data-project="'+p.id+'" aria-label="'+escapeHTML(t('Explore ', 'Découvrir ')+p.title)+'"><span class="pick-thumbnail" aria-hidden="true">'+visual(p)+'</span><span class="pick-copy"><strong>'+title+'</strong><span>'+escapeHTML(localized(caption))+'</span></span><span class="pick-open" aria-hidden="true">+</span></button>';
   }).join('');
 }
 function renderArchive() {
@@ -64,6 +65,7 @@ function applyLanguage() {
   renderProjects(); renderArchive();
   if (dialog.open) renderDialog();
   updateMotionLabel();
+  document.dispatchEvent(new Event('portfolio:languagechange'));
 }
 $('#language-toggle').addEventListener('click',()=>{language = t('fr','en');try{localStorage.setItem('portfolio-language',language);}catch{}applyLanguage();});
 $$('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
