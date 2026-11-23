@@ -20,8 +20,21 @@ function visual(project, extra = '') {
   };
   return '<div class="project-visual visual-'+project.visual+' '+extra+'"><span class="visual-label">'+escapeHTML(project.title.toUpperCase())+'</span>'+graphics[project.visual]+'</div>';
 }
+function workflowPreview(project) {
+  const stages = {
+    volt: [['Specify','Size','Simulate','Verify'],['Définir','Dimensionner','Simuler','Vérifier']],
+    playora: [['Speak','Validate','Play','Narrate'],['Parler','Valider','Jouer','Raconter']],
+    finance: [['Retrieve','Reason','Compute','Cite'],['Rechercher','Raisonner','Calculer','Sourcer']],
+    vision: [['Curate','Fine-tune','Ablate','Evaluate'],['Préparer','Adapter','Tester','Évaluer']],
+    feed: [['Retrieve','Calculate','Interpret','Report'],['Collecter','Calculer','Interpréter','Rapporter']],
+    spatial: [['Select','Place','Check','Guide'],['Choisir','Placer','Vérifier','Guider']]
+  };
+  const artwork=visual(project);
+  const overlay='<span class="workflow-hint" aria-hidden="true">'+t('Hover to follow the workflow','Survolez pour suivre le parcours')+'</span><div class="workflow-preview" aria-hidden="true">'+localized(stages[project.visual]).map((stage,index)=>'<span class="workflow-step" style="--step:'+index+'">'+escapeHTML(stage)+'</span>'+(index<3?'<span class="workflow-connector"></span>':'')).join('')+'</div>';
+  return artwork.slice(0,-6)+overlay+'</div>';
+}
 function renderProjects() {
-  $('#project-grid').innerHTML = PROJECTS.map(p => '<article class="project-card"'+(filter !== 'all' && p.category !== filter ? ' hidden' : '')+'><button class="visual-button" data-project="'+p.id+'" aria-label="'+escapeHTML(t('Explore ','Découvrir ')+(language === 'fr' && p.titleFr || p.title))+'">'+visual(p)+'</button><div class="project-meta"><span>'+escapeHTML(localized(p.type))+'</span><span>2026</span></div><h3><button data-project="'+p.id+'">'+escapeHTML(language === 'fr' && p.titleFr || p.title)+'</button></h3><p>'+escapeHTML(localized(p.summary))+'</p><div class="tags">'+p.tags.map(tag=>'<span>'+escapeHTML(tag)+'</span>').join('')+'</div></article>').join('');
+  $('#project-grid').innerHTML = PROJECTS.map(p => '<article class="project-card"'+(filter !== 'all' && p.category !== filter ? ' hidden' : '')+'><button class="visual-button" data-project="'+p.id+'" aria-label="'+escapeHTML(t('Explore ','Découvrir ')+(language === 'fr' && p.titleFr || p.title))+'">'+workflowPreview(p)+'</button><div class="project-meta"><span>'+escapeHTML(localized(p.type))+'</span><span>2026</span></div><h3><button data-project="'+p.id+'">'+escapeHTML(language === 'fr' && p.titleFr || p.title)+'</button></h3><p>'+escapeHTML(localized(p.summary))+'</p><div class="tags">'+p.tags.map(tag=>'<span>'+escapeHTML(tag)+'</span>').join('')+'</div></article>').join('');
   const count = PROJECTS.filter(p => filter === 'all' || p.category === filter).length;
   $('#project-count').textContent = count + t(' projects', ' projets');
   renderHeroPicks();

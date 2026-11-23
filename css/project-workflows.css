@@ -1,0 +1,50 @@
+/* Scoped to the selected-work gallery. Hero previews and dialogs stay still. */
+#project-grid .workflow-hint { position:absolute; bottom:24px; left:22px; font-size:10px; color:currentColor; opacity:.6; transition:opacity .15s; }
+#project-grid .workflow-preview { position:absolute; bottom:18px; left:20px; right:63px; display:flex; align-items:center; justify-content:space-between; gap:7px; padding:8px 11px; border:1px solid #798b6133; border-radius:5px; background:#f5f6f2eb; color:#34422e; opacity:0; transform:translateY(5px); transition:opacity .18s,transform .18s; }
+#project-grid .workflow-step { font:500 10px/1.4 var(--display); white-space:nowrap; opacity:.4; }
+#project-grid .workflow-connector { height:1px; flex:1; min-width:5px; background:currentColor; opacity:.25; }
+#project-grid .visual-volt .workflow-preview,#project-grid .visual-vision .workflow-preview { background:#1e3029eb; border-color:#8fa87b55; color:#d1f86a; }
+#project-grid .workflow-active .workflow-hint { opacity:0; }
+#project-grid .workflow-active .workflow-preview { opacity:1; transform:none; }
+#project-grid .workflow-active .workflow-step { animation:portfolio-step 4s linear infinite; animation-delay:calc(var(--step)*1s); }
+@keyframes portfolio-step { 0%,22% { opacity:1; } 27%,100% { opacity:.4; } }
+/* VoltForge: electrical flow and a verification pulse. */
+#project-grid .workflow-active .circuit>path:first-child { stroke-dasharray:12 6; animation:portfolio-electricity 1.2s linear infinite; }
+#project-grid .workflow-active .circuit rect { animation:portfolio-switch 2s ease-in-out infinite; }
+@keyframes portfolio-electricity { to { stroke-dashoffset:-36; } }
+@keyframes portfolio-switch { 0%,100% { fill:#d1f86a00; } 45%,65% { fill:#d1f86a33; } }
+/* Playora: a voice request becomes a legal move, then narration. */
+#project-grid .workflow-active .voice-small { animation:portfolio-voice 4s ease-in-out infinite; }
+#project-grid .workflow-active .chess-piece { animation:portfolio-knight 4s ease-in-out infinite; }
+@keyframes portfolio-voice { 0%,20% { background:#b5a3ec44; border-color:#d6cef1; } 35%,65% { background:transparent; border-color:#645c7f; } 80%,100% { background:#b5a3ec33; border-color:#d6cef1; } }
+@keyframes portfolio-knight { 0%,35% { transform:translate(0,0); } 50%,85% { transform:translate(-24px,44px); } 100% { transform:translate(0,0); } }
+/* Financial Agent: retrieve in parallel, reason, return evidence. */
+#project-grid .workflow-active .flow-stack .flow-node { animation:portfolio-retrieval 4s ease-in-out infinite; }
+#project-grid .workflow-active .flow-hub { animation:portfolio-reason 4s ease-in-out infinite; }
+#project-grid .workflow-active .finance-flow>.flow-node { animation:portfolio-evidence 4s ease-in-out infinite; }
+#project-grid .workflow-active .flow-line { background:linear-gradient(90deg,#8c8c73 20%,#628747 50%,#8c8c73 80%); background-size:200% 100%; animation:portfolio-packet 1s linear infinite; }
+@keyframes portfolio-retrieval { 0%,25% { background:#dfe9c9; border-color:#8ba36a; } 35%,100% { background:#f8f6ef; border-color:#bdb6a2; } }
+@keyframes portfolio-reason { 0%,25%,80%,100% { transform:scale(1); background:#4d5947; } 40%,65% { transform:scale(1.08); background:#6a8054; } }
+@keyframes portfolio-evidence { 0%,60%,100% { background:#f8f6ef; border-color:#bdb6a2; } 70%,90% { background:#dfe9c9; border-color:#8ba36a; } }
+@keyframes portfolio-packet { to { background-position:-200% 0; } }
+/* Vision research: inspect each modality, then compare. */
+#project-grid .sat-tile:after { content:''; position:absolute; top:0; bottom:26px; left:0; width:22%; background:linear-gradient(90deg,transparent,#d1f86a66,transparent); transform:translateX(-110%); opacity:0; }
+#project-grid .workflow-active .sat-tile:after { opacity:1; animation:portfolio-scan 4s ease-in-out infinite; }
+#project-grid .workflow-active .sat-tile:nth-child(2):after { animation-delay:.6s; }
+#project-grid .workflow-active .sat-tile:nth-child(3):after { animation-delay:1.2s; }
+@keyframes portfolio-scan { 0% { transform:translateX(-110%); } 40%,85% { transform:translateX(500%); } 100% { transform:translateX(-110%); } }
+/* FeedIntel: evidence feeds calculated metrics and a structured view. */
+#project-grid .feed-chart span { transform-origin:bottom; }
+#project-grid .workflow-active .feed-chart span { animation:portfolio-chart 4s ease-in-out infinite; }
+#project-grid .workflow-active .feed-chart span:nth-child(2n) { animation-delay:.15s; }
+#project-grid .workflow-active .feed-chart span:nth-child(3n) { animation-delay:.3s; }
+@keyframes portfolio-chart { 0%,12% { transform:scaleY(.3); opacity:.65; } 42%,85% { transform:scaleY(1); opacity:1; } 100% { transform:scaleY(.3); opacity:.65; } }
+/* SpatialForge: select a part, place it, validate its target. */
+#project-grid .workflow-active .spatial-block:not(.round):not(.outline) { animation:portfolio-place 4s ease-in-out infinite; }
+#project-grid .workflow-active .spatial-block.outline { animation:portfolio-target 4s ease-in-out infinite; }
+@keyframes portfolio-place { 0%,15% { transform:translate(0,0); } 45%,85% { transform:translate(110px,-25px); } 100% { transform:translate(0,0); } }
+@keyframes portfolio-target { 0%,40%,100% { border-color:#486c7f; background:transparent; } 50%,85% { border-color:#71953d; background:#d1f86a55; } }
+@media(max-width:1100px) { #project-grid .workflow-preview { left:13px; right:58px; gap:5px; padding:8px; } #project-grid .workflow-step { font-size:9px; } }
+@media(max-width:760px) and (min-width:521px) { #project-grid .workflow-preview { flex-wrap:wrap; justify-content:flex-start; right:55px; bottom:12px; gap:4px 7px; } #project-grid .workflow-connector { display:none; } #project-grid .workflow-hint { left:15px; font-size:9px; max-width:150px; } }
+@media(hover:none) { #project-grid .workflow-hint { display:none; } }
+@media(prefers-reduced-motion:reduce) { #project-grid .workflow-active * { animation:none!important; } #project-grid .workflow-hint { display:none; } #project-grid .workflow-preview { transition:none; } }

@@ -16,6 +16,7 @@ Open http://127.0.0.1:8080. The site can also be opened directly from index.html
 - `css/style.css`: layout, visual system, and responsive styles.
 - `css/first-impression.css`: illustrated opening, project previews, Pip, and journey styling.
 - `css/network-story.css` and `js/network-story.js`: the interactive Orange research story.
+- `css/project-workflows.css` and `js/project-workflows.js`: exclusive hover/focus workflow previews in Selected Work.
 - `js/bird-flight.js`: one brief arrival flight; Pip then stays on the hero illustration.
 - `js/projects.js`: six selected case studies and the research archive. Paired strings contain English first, French second.
 - `js/script.js`: filters, accessible native project dialogs, navigation, language persistence, copy email, the Canvas point-cloud experiment, and Pip’s optional interactions.
@@ -58,3 +59,5 @@ Verified in headless Chrome at 360, 390, 768, 1024, and 1440 pixels in English a
 The revised opening was also checked for project-preview visibility at 1440×900, zero idle animation-frame requests, keyboard operation and focus restoration for Pip, reduced-motion behavior, and a bird menu contained within the mobile viewport.
 
 The latest interaction checks verify a single arrival flight with options, no scroll flights, visible-only autoplay and looping, manual selection holding its state, pause/resume/reset, and the lab appearing before writing, at ten combinations of language and viewport width.
+
+Each Selected Work illustration has a project-specific workflow preview. A pointer hover or visible keyboard focus activates one card at a time, with pointer hover taking priority. Leaving the card, opening a dialog, scrolling it offscreen, or hiding the tab stops its animations. The effects use CSS rather than a JavaScript animation loop, honor reduced motion, and are decorative illustrations rather than live model execution. Touch still opens the case study directly. The six previews, exclusive activation, keyboard/pointer switching, filter and language updates, offscreen stopping, reduced motion, and mobile tap behavior were checked in Chrome.
