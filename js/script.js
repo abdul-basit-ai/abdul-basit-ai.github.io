@@ -72,7 +72,7 @@ nav.addEventListener('click',event=>{if(event.target.closest('a'))closeMenu();})
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
 document.addEventListener('click',event=>{if(!event.target.closest('.site-header'))closeMenu();});
 const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){$$('#main-nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+entry.target.id));}});},{rootMargin:'-15% 0px -55% 0px'});
-$$('main section[id]').forEach(section=>navObserver.observe(section));
+$$('main section[id], #about').forEach(section=>navObserver.observe(section));
 let toastTimeout;
 function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('visible'),3000);}
 $('#copy-email').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('basitmal36@gmail.com');toast(t('Email copied. Say hello!','Adresse copiée. À bientôt !'));}catch{toast(t('Email: basitmal36@gmail.com','E-mail : basitmal36@gmail.com'));}});

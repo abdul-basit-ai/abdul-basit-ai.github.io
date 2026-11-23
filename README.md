@@ -33,6 +33,8 @@ Project descriptions were curated from these public READMEs in November 2026:
 
 Hackathon participation and the OpenAI DevDay top-four finalist placement come from the supplied English CV. No new placements or awards were inferred. Case studies preserve meaningful validation limits from the READMEs. The project artwork is an original schematic illustration, not a screenshot or live benchmark. Private repository contents are not included.
 
+The opening section introduces Abdul personally. Education and experience use the supplied CVs, with the IBISC lab affiliation supplied directly by Abdul. Dates and article titles in the writing section come from the public [Medium RSS feed](https://medium.com/feed/@basitmal36). Article titles remain in their original English; navigation, dates, and interface copy support English and French. The point-cloud experiment lives in the lab.
+
 ## Accessibility and performance
 
 Native dialogs provide keyboard focus containment and Escape-to-close behavior. Filters and shape controls expose pressed state. Mobile navigation exposes expanded state. The hero respects reduced-motion preferences, has a pause control, caps pixel density, and suspends animation offscreen and in background tabs. Fonts fall back to system fonts if Google Fonts is unavailable. No tracking or runtime GitHub API calls are used.
