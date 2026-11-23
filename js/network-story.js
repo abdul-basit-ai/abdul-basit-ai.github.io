@@ -14,15 +14,18 @@
     detected:{title:['See the pattern, not just the tower.','Voir le motif, pas seulement l’antenne.'],body:['Rewind to the warning signs. I built an ANEMONE-inspired, self-supervised detector with edge-aware GATv2 encoders. Five-day windows combine recent radio KPIs with inter-site relationships to rank abnormal sites for investigation.','Revenons aux premiers signes. J’ai conçu un détecteur autosupervisé inspiré d’ANEMONE, avec GATv2 et les attributs des liens. Des fenêtres de cinq jours combinent les KPI récents et les relations entre sites pour classer les anomalies à analyser.'],detail:['Evaluated result: 0.963 AUROC on the synthetic anomaly test set.','Résultat évalué : 0,963 AUROC sur le test d’anomalies synthétiques.']},
     reroute:{title:['What if recovery respected spare capacity?','Et si la reprise respectait les capacités ?'],body:['A possible next step: distribute reconnecting users according to the spare capacity of reachable neighbours. In this toy example, 64 reconnecting users are spread without overloading the remaining sites; 16 initial disconnections remain.','Une piste de prolongement : répartir les utilisateurs selon la capacité disponible des voisins accessibles. Dans cet exemple, 64 reconnexions sont réparties sans surcharge ; les 16 déconnexions initiales restent présentes.'],detail:['Illustrative capacity-aware policy. The report evaluates detection, not this routing controller.','Politique de routage illustrative. Le rapport évalue la détection, pas ce contrôleur.']}
   };
-  let state='normal',playing=false,timer;
+  const motion=matchMedia('(prefers-reduced-motion: reduce)');
+  const phaseDuration=2400;
+  let state='normal',playing=false,visible=false,autoEnabled=!motion.matches,manualSelection=false,timer;
   const tr=value=>value[document.documentElement.lang==='fr'?1:0];
-  function stop(){playing=false;clearTimeout(timer);timer=undefined;updatePlayLabel();}
   function updatePlayLabel(){const b=$('#network-play');b.textContent=tr(playing?['Pause the story','Mettre en pause']:['Play the story','Lancer l’histoire']);b.setAttribute('aria-pressed',String(playing));}
   function render(){
     const entry=text[state],copy=$('#network-story-copy');
+    copy.setAttribute('aria-live',playing?'off':'polite');
     copy.replaceChildren();
     for(const [tag,key] of [['h3','title'],['p','body'],['p','detail']]){const el=document.createElement(tag);el.textContent=tr(entry[key]);if(key==='detail')el.className='story-detail';copy.append(el);}
     $('.network-stage').dataset.state=state;
+    root.dataset.playing=String(playing);
     buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.networkStep===state)));
     let loads={...base};
     if(state==='cascade')loads={A:0,B:136,C:44,D:82.8,E:45};
@@ -52,20 +55,30 @@
   function schedule(){
     if(!playing)return;
     timer=setTimeout(()=>{
-      const next=steps.indexOf(state)+1;
-      if(next>=steps.length){stop();return;}
-      state=steps[next];render();schedule();
-    },4800);
+      timer=undefined;
+      if(!shouldPlay()){syncPlayback();return;}
+      state=steps[(steps.indexOf(state)+1)%steps.length];render();schedule();
+    },phaseDuration);
   }
-  buttons.forEach(b=>b.addEventListener('click',()=>{stop();state=b.dataset.networkStep;render();}));
+  function shouldPlay(){return autoEnabled&&visible&&!document.hidden&&!document.querySelector('#project-dialog[open]');}
+  function syncPlayback(){
+    const next=shouldPlay();
+    if(next!==playing){playing=next;clearTimeout(timer);timer=undefined;if(playing)schedule();}
+    $('#network-story-copy').setAttribute('aria-live',playing?'off':'polite');
+    root.dataset.playing=String(playing);
+    updatePlayLabel();
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>{manualSelection=true;autoEnabled=false;syncPlayback();state=b.dataset.networkStep;render();}));
   $('#network-play').addEventListener('click',()=>{
-    if(playing){stop();return;}
-    if(state==='reroute')state='normal';
-    playing=true;render();schedule();
+    autoEnabled=!playing;manualSelection=!autoEnabled;syncPlayback();render();
   });
-  $('#network-reset').addEventListener('click',()=>{stop();state='normal';render();});
-  new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)stop();}).observe(root);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+  $('#network-reset').addEventListener('click',()=>{manualSelection=true;autoEnabled=false;syncPlayback();state='normal';render();});
+  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.25;syncPlayback();},{threshold:[0,.25]}).observe($('.network-stage'));
+  document.addEventListener('visibilitychange',syncPlayback);
+  const projectDialog=document.querySelector('#project-dialog');
+  projectDialog.addEventListener('toggle',syncPlayback);
+  projectDialog.addEventListener('close',syncPlayback);
+  motion.addEventListener('change',()=>{autoEnabled=!motion.matches&&!manualSelection;syncPlayback();});
   document.addEventListener('portfolio:languagechange',render);
   render();
 })();
