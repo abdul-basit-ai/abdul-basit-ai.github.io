@@ -16,11 +16,13 @@ Open http://127.0.0.1:8080. The site can also be opened directly from index.html
 - `css/style.css`: layout, visual system, and responsive styles.
 - `css/first-impression.css`: illustrated opening, project previews, Pip, and journey styling.
 - `css/network-story.css` and `js/network-story.js`: the interactive Orange research story.
+- `css/plant-story.css` and `js/plant-story.js`: the plant-monitoring journey from data through Raspberry Pi deployment and CDPR integration.
 - `css/project-workflows.css` and `js/project-workflows.js`: exclusive hover/focus workflow previews in Selected Work.
 - `js/bird-flight.js`: one brief arrival flight; Pip then stays on the hero illustration.
 - `js/projects.js`: six selected case studies and the research archive. Paired strings contain English first, French second.
 - `js/script.js`: filters, accessible native project dialogs, navigation, language persistence, copy email, the Canvas point-cloud experiment, and Pip’s optional interactions.
 - `images/curiosity-landscape.webp`: original generated illustration, compressed to 137,520 bytes.
+- `images/projects/plant-cdpr-hardware.jpg`: the actual prototype photograph extracted from Figure 2.5 of the supplied defense report.
 - `Abdul_Basit_CV-en.pdf` and `Abdul_Basit_CV-fr.pdf`: language-specific downloads.
 
 The existing `.nojekyll` keeps this compatible with direct GitHub Pages publishing. This redesign does not change hosting configuration or automatically publish changes.
@@ -38,7 +40,7 @@ Project descriptions were curated from these public READMEs in November 2026:
 
 Hackathon participation and the OpenAI DevDay top-four finalist placement come from the supplied English CV. No new placements or awards were inferred. Case studies preserve meaningful validation limits from the READMEs. The project artwork is an original schematic illustration, not a screenshot or live benchmark. Private repository contents are not included.
 
-The opening section introduces Abdul personally, states his search for a first full-time AI/ML role, and offers three project previews. The full projects section precedes the journey. Education and experience use the supplied CVs, with the IBISC lab affiliation supplied directly by Abdul. Dates and article titles in the writing section come from the public [Medium RSS feed](https://medium.com/feed/@basitmal36). Article titles remain in their original English; navigation, dates, and interface copy support English and French. The point-cloud experiment lives in the lab.
+The opening section introduces Abdul personally, states his search for a first full-time AI/ML role, and offers three project previews. The full projects section precedes the journey. Education and experience use the supplied CVs, with the IBISC lab affiliation supplied directly by Abdul. Dates and article titles in the writing section come from the public [Medium RSS feed](https://medium.com/feed/@basitmal36). Article titles remain in their original English; navigation, dates, and interface copy support English and French. The point-cloud experiment is in The Curiosity Corner, after the writing section; hackathons remain in the lab.
 
 The illustrated setting is original, inspired by the personal atmosphere of the supplied portfolio reference. Pip is an inline SVG bird. Eye movement responds only to pointer events inside the illustration; hopping is brief and input-triggered. Pip flies in once on load, lands on the illustration, and opens its options without moving keyboard focus. It stays in that position as the page scrolls. The arrival uses one temporary SVG overlay and the Web Animations API; wing animation stops when the overlay is removed. Reduced motion skips the flight. Sound requires an explicit “Hear a chirp” action and is synthesized locally. Pip can also open a project case study. There is no autoplay audio, remote audio asset, extra animation library, or persistent hero animation loop.
 
@@ -49,6 +51,25 @@ The feature after the opening previews is grounded in Abdul’s [Orange internsh
 All five-site diagram loads are explicitly illustrative. The final capacity-aware routing step is an exploratory extension, not an evaluated result from the report. It allocates 64 reconnecting users in proportion to spare capacity across four neighbours; the 16 initial disconnections remain. The story plays automatically when at least a quarter of the diagram is visible, advances every 2.4 seconds, and loops. Selecting a step pauses on that state until Play is chosen. Playback pauses offscreen, while the tab is hidden, or behind a project dialog. Reduced motion defaults to manual playback. Automatically changing narration does not generate repeated screen-reader announcements. No operational data, model inference, or network requests run in the browser.
 
 The opening previews are Financial Agent, VoltForge, and Playora. SpatialForge remains in the full project gallery, at the end. Article summaries are grounded in the public RSS article text.
+
+## Plant monitoring and robotics story
+
+The feature immediately after Orange uses the supplied `Final Defense Report.pdf`: pages 27–31 for the 7,200-image / 18-class dataset, preprocessing, deployment flow, and integrated prototype; pages 41–45 for the Raspberry Pi camera and training setup; and Table 4.1 on page 61 for model results. The photograph is extracted unchanged from Figure 2.5. The final-year team is credited as Abdul Basit, Aniqa Firdous, and Abdul Aziz. Joystick-guided robot navigation also uses the supplied CV and Abdul’s account of his work.
+
+The story explains the data pipeline, five CNN comparisons, the accuracy/device-resource trade-off, TensorFlow Lite inference on Raspberry Pi 4, and camera placement on the CDPR. It accurately distinguishes the reported ResNet50 test accuracy of 98.61% from the MobileNet-family edge deployment choice. It makes no field-accuracy or device-latency claim. Like the Orange feature, it autoplays while visible and allows manual selection, pause/resume, reset, and reduced motion. Illustrated scenes are labelled as such.
+
+## Using a custom domain with GitHub Pages
+
+GitHub Pages can keep hosting the site while a domain you own is displayed in the address bar. See [GitHub’s custom-domain setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+Once a domain such as `abdulbasit.com` is registered to you:
+
+1. Add the owned domain in this repository’s Settings → Pages → Custom domain.
+2. At the DNS provider, set apex (`@`) A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153` (or use a supported ALIAS/ANAME to `abdul-basit-ai.github.io`).
+3. Point `www` using a CNAME to `abdul-basit-ai.github.io`.
+4. Complete domain verification and enable Enforce HTTPS when GitHub makes it available. Update canonical/Open Graph URLs after the domain works.
+
+The domain is not currently owned or connected; the existing GitHub Pages address and hosting configuration remain active.
 
 ## Accessibility and performance
 
